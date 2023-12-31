@@ -1,22 +1,24 @@
 <template>
   <div class="home block">
-    <div class="block w-full h-auto px-5 py-3">
+    <!-- <div class="block w-full h-auto px-5 py-3">
       <span class="text-sm font-normal tracking-wide flex justify-center">
         WHAT WE PROVIDE
       </span>
       <p class="text-xl font-bold tracking-wide py-2 flex justify-center">
         We provide truly prominent Software solutions.
       </p>
-      <!-- <div
+      <div
         class="py-1 w-full h-auto flex justify-center px-5 bg-yellow-500"
-      ></div> -->
-    </div>
+      ></div>
+    </div> -->
 
-<!-- contact block -->
+    <!-- contact block -->
     <div class="flex w-full h-auto px-5 py-10">
       <!-- left side -->
       <div class="w-1/2 h-auto block">
-        <h1 class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5">
+        <h1
+          class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5"
+        >
           To make requests for further information, contact us
         </h1>
         <div
@@ -24,14 +26,16 @@
           v-for="info in information"
           :key="info.id"
         >
-          <div class="w-1/3 h-auto flex justify-center items-center">
+          <div class="w-1/4 h-auto flex justify-center items-center">
             {{ info.icon }}
           </div>
-          <div class="w-2/3 block px-1">
-            <h3 class="font-bold tracking-wide flex justify-start px-2 text-2xl">
+          <div class="w-2/4 block px-1">
+            <h3
+              class="font-bold tracking-wide flex justify-start text-2xl"
+            >
               {{ info.property }}
             </h3>
-            <p class="break-all text-sm font-medium text-black mr-16 ">
+            <p class="break-all text-sm font-medium text-black mr-16">
               {{ info.value }}
             </p>
           </div>
@@ -92,7 +96,9 @@
             </textarea>
           </div>
           <div class="w-full py-2 block">
-            <button class="text-sm font-bold bg-gray-600 text-white w-full py-3 rounded-lg">
+            <button
+              class="text-sm font-bold bg-gray-600 text-white w-full py-3 rounded-lg"
+            >
               Send Message
             </button>
           </div>
