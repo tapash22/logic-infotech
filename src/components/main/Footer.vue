@@ -1,13 +1,21 @@
 <template>
-  <div class="block w-full footer-cover relative">
-    <div class="w-full h-auto px-6 py-5 flex justify-center " >
-    <form class="flex justify-center py-3 px-4  bg-yellow-500 w-1/2 rounded-lg items-center" style="margin-top:-80px ">
-        <p class="text-lg font-bold py-1 w-1/3 ">
-            Subscribe to us
-        </p>
-        <input type="text" class="h-10 rounded-bl-lg rounded-tl-lg py-2 px-3 w-full bg-white ring-1 ring-white" />
-        <button class="bg-black h-10 rounded-tr-lg rounded-br-lg text-white text-sm font-bold px-2">Subscribe</button>
-    </form>
+  <div class="block w-full footer-cover mt-5 relative">
+    <div class="w-full h-auto px-6 py-5 flex justify-center">
+      <form
+        class="flex justify-center py-3 px-4 bg-yellow-500 w-5/6 rounded-lg items-center"
+        style="margin-top: -80px"
+      >
+        <p class="text-lg font-bold py-1 w-1/3">Subscribe to our newsletter</p>
+        <input
+          type="text"
+          class="h-10 rounded-bl-lg rounded-tl-lg py-2 px-3 w-full bg-white ring-1 ring-white"
+        />
+        <button
+          class="bg-black h-10 rounded-tr-lg rounded-br-lg text-white text-sm font-bold px-2"
+        >
+          Subscribe
+        </button>
+      </form>
     </div>
     <div class="px-10 py-2 flex justify-center w-full footer-cover">
       <div class="w-full h-auto px-3 py-3 flex justify-start">
@@ -17,7 +25,9 @@
             src="../../assets/logo.png"
             class="w-24 h-14 flex justify-center px-2"
           />
-          <p class="font-medium text-sm text-white tracking-wide text-justify mr-7">
+          <p
+            class="font-medium text-sm text-white tracking-wide text-justify mr-7"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
             corporis nisi explicabo maiores sunt at similique rerum, quas
             exercitationem vitae, minima laudantium. Labore quas accusantium
@@ -94,7 +104,7 @@
     </div>
     <div class="flex justify-center py-2 bg-black ring-1 ring-white">
       <p class="text-sm font-normal text-gray-300">
-        All RIght Reserved Logic Software Ltd.
+        All Right Reserved Logic Software Ltd.
       </p>
     </div>
   </div>
