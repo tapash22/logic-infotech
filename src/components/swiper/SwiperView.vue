@@ -51,7 +51,7 @@ export default {
 </script>
   
   <style >
-.VueCarousel-pagination[data-v-438fd353] {
+.VueCarousel-pagination {
     width: 100%;
     text-align: center;
     margin-top: -50px;

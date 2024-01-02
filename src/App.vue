@@ -30,6 +30,6 @@ export default {
   height: auto;
   padding: 0;
   margin: 0;
-  background: white;
+  /* background: white; */
 }
 </style>

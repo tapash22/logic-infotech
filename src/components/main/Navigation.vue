@@ -1,56 +1,102 @@
 <template>
-    <div class="px-16 py-0 flex justify-center w-full  border-b-2 border-gray-300 shadow-xl navigation">
+    <div class="bg-transparent">
+      <!-- <div class="nav-placeholder"></div> -->
+      <div
+      :class="isFixed ? 'fixed-nav yellow-background' : 'navigation'"
+        class="px-16 py-0 flex justify-center w-full border-b-2 border-indigo-300 shadow-xl "
+      >
         <div class="w-1/4 flex justify-start py-2">
-        <img src="../../assets/logo/info.png" class="w-28 h-16" />
+          <img src="../../assets/logo/info.png" class="w-28 h-16" />
         </div>
-        <ul class="w-3/4 flex justify-end items-center list-none gap-4 ">
-        <li v-for="navL in navLinks" :key="navL.id">
-            <router-link :to="navL.link" class="text-lg font-bold tracking-wide text-black">
-                {{ navL.name }}
+        <ul class="w-3/4 flex justify-end items-center list-none gap-4">
+          <li v-for="navL in navLinks" :key="navL.id">
+            <router-link
+              :to="navL.link"
+              class="text-lg font-bold tracking-wide text-black"
+            >
+              {{ navL.name }}
             </router-link>
-        </li>
+          </li>
         </ul>
+      </div>
     </div>
-</template>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        isFixed: false,
+        isYellowBackground: false,
+        navLinks: [
+          {
+            id: 1,
+            name: "Home",
+            link: "/",
+          },
+          {
+            id: 2,
+            name: "About",
+            link: "/about",
+          },
+          {
+            id: 3,
+            name: "Services",
+            link: "/services",
+          },
+          {
+            id: 4,
+            name: "Blog",
+            link: "/blogs",
+          },
+          {
+            id: 5,
+            name: "Contact",
+            link: "/contact",
+          },
+        ],
+      };
+    },
+    methods: {
+      handleScroll() {
+     
+        const scrollPosition = window.scrollY;
 
-<script>
-export default {
-    data(){
-        return{
-            navLinks:[
-                {
-                    id:1,
-                    name:'Home',
-                    link:'/',
-                },
-                {
-                    id:2,
-                    name:'About',
-                    link:'/about',
-                },
-                {
-                    id:3,
-                    name:'Services',
-                    link:'/services',
-                },
-                {
-                    id:4,
-                    name:'Blog',
-                    link:'/blogs',
-                },
-                {
-                    id:5,
-                    name:'Contact',
-                    link:'/contact',
-                }
-            ]
-        }
+          if (scrollPosition > 0) {
+            this.isFixed = true;
+            this.isYellowBackground = true;
+          } else {
+            this.isFixed = false;
+            this.isYellowBackground = false;
+          }
+      },
+    },
+    mounted() {
+      window.addEventListener("scroll", this.handleScroll);
+    },
+    beforeDestroy() {
+      window.removeEventListener("scroll", this.handleScroll);
+    },
+  };
+  </script>
+  
+  <style scoped>
+  
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
     }
-}
-</script>
-
-<style scoped>
-.navigation{
-    background: #ebe5e5c6;
-}
-</style>
+  
+    .yellow-background {
+      background-color: rgba(128, 128, 128, 0.742);
+    }
+  
+    .nav-placeholder {
+      height: 20px;
+    }
+  </style>
+  
