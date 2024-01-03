@@ -1,9 +1,9 @@
 <template>
-    <div class="bg-transparent">
+    <div class="navbar">
       <!-- <div class="nav-placeholder"></div> -->
       <div
-      :class="isFixed ? 'fixed-nav yellow-background' : 'navigation'"
-        class="px-16 py-0 flex justify-center w-full border-b-2 border-indigo-300 shadow-xl "
+      :class="isFixed ? 'fixed-nav yellow-background' : 'navigation '"
+        class="px-16 py-0 flex justify-center w-full shadow-xl shadow-blue-900  z-50"
       >
         <div class="w-1/4 flex justify-start py-2">
           <img src="../../assets/logo/info.png" class="w-28 h-16" />
@@ -12,7 +12,7 @@
           <li v-for="navL in navLinks" :key="navL.id">
             <router-link
               :to="navL.link"
-              class="text-lg font-bold tracking-wide text-black"
+              class="text-lg font-bold tracking-wide text-white"
             >
               {{ navL.name }}
             </router-link>
@@ -81,22 +81,24 @@
   </script>
   
   <style scoped>
-  
     .fixed-nav {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.312);
       transition: background-color 0.3s ease;
     }
   
     .yellow-background {
-      background-color: rgba(128, 128, 128, 0.742);
+      background-color: rgb(39, 92, 153);
     }
   
     .nav-placeholder {
       height: 20px;
+    }
+    .navbar{
+      background: rgb(18, 18, 143);
     }
   </style>
   

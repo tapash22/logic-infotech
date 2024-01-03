@@ -1,21 +1,31 @@
 <template>
-  <div class="home block -mt-16">
-    <div class="flex w-full justify-start items-center  px-14 home-header">
-      <div class="block w-1/2 py-5">
-<span class="text-lg font-medium tracking-wide py-3 text-white">
-  We provide the most advance digital solution
-</span>
-<p class="border-l-4 border-indigo-500 text-5xl font-bold my-4 px-2 text-white">
-  Leading Software Development Studio & Agency
-</p>
-<div class="flex justify-start my-3 gap-3">
-  <div class="w-20 h-20 rounded-full ring-1 ring-white flex justify-center items-center">
-    <i class="fa fa-play bg-white rounded-full w-16 h-16 flex justify-center items-center text-xl text-gray-600" aria-hidden="true"></i>
-  </div>
-  <p class="text-2xl font-bold flex justify-center items-center text-white ">
-    Watch Video
-  </p>
-</div>
+  <div class="home block -mt-10 ">
+
+    <div class="flex w-full justify-start items-center px-14 home-header ">
+      <div class="block w-3/4 py-5 px-5 ">
+        <span class="text-lg font-medium tracking-wide py-3 text-white">
+          We provide the most advance digital solution
+        </span>
+        <p
+          class="border-l-4 border-white text-5xl font-bold my-5 px-2 text-white"
+        >
+          Leading Software Development Studio & Agency
+        </p>
+        <div class="flex justify-start my-5 gap-3">
+          <div
+            class="w-20 h-20 rounded-full ring-1 ring-white flex justify-center items-center"
+          >
+            <i
+              class="fa fa-play bg-white rounded-full w-16 h-16 flex justify-center items-center text-xl text-gray-600"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <p
+            class="text-2xl font-bold flex justify-center items-center text-white"
+          >
+            Watch Video
+          </p>
+        </div>
       </div>
     </div>
     <!-- intro part -->
@@ -108,7 +118,7 @@
         WHAT WE PROVIDE
       </span>
       <p class="text-3xl font-bold tracking-wide py-2 flex justify-center">
-        We provide truly prominent Software solutions.
+        We provide truly prominent Software solutions
       </p>
       <div class="py-3 w-full h-auto flex justify-center gap-5 px-5">
         <div
@@ -168,7 +178,7 @@
       >
         20k+ satisfied clients worldwide
       </p>
-      <div class="px-8 py-3">
+      <div class="px-12 py-3">
         <Swiper />
       </div>
     </div>
@@ -177,7 +187,7 @@
     <!-- contact block -->
     <div class="flex w-full h-auto px-5 py-10">
       <!-- left side -->
-      <div class="w-1/2 h-auto block">
+      <div class="w-1/2 h-auto block px-3 py-3">
         <h1
           class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5"
         >
@@ -375,15 +385,23 @@ export default {
 /* .navigation{
   background: yellow;
 } */
+
+.product-card i {
+  transition: transform 0.3s ease-in-out; 
+}
 .product-card:hover i {
   transform: translateX(100%);
 }
 
-.home-header{
-  background-image: url('../assets/images/hero2-bg.jpg');
-
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
+.home-header {
+  /* background-image: url("../assets/images/hero2-bg.jpg"); */
+  background-image: url("../assets/images/1.jpg");
+  /* background-image: url("../assets/images/2.jpg"); */
+  /* background-image: url("../assets/images/3.jpg"); */
+  /* background-position: center; */
+  /* border-bottom-left-radius: 50%; */
+  background-size: cover;
+  /* border-bottom-right-radius: 75%; */
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

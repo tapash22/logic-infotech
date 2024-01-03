@@ -1,18 +1,19 @@
 <template>
   <div class="block w-full footer-cover mt-5 relative">
     <!-- subscribe box -->
-    <div class="w-full h-auto px-6 py-5 flex justify-center">
+    <div class="w-full h-auto px-6 py-3 flex justify-center">
       <form
-        class="flex justify-center py-5 px-4 bg-yellow-500 w-5/6 rounded-lg items-center"
-        style="margin-top: -80px"
+        class="flex justify-center py-5 px-3 w-5/6 rounded-lg items-center box"
+        style="margin-top: -60px"
       >
-        <p class="text-xl font-bold py-1 w-1/3">Subscribe to our newsletter</p>
+        <p class="text-xl font-bold text-white py-1 px-1 w-1/3">Subscribe to our newsletter</p>
         <input
           type="text"
-          class="h-12 rounded-bl-lg rounded-tl-lg py-2 px-2 w-full bg-white ring-1 ring-white"
+          class="h-12 rounded-bl-lg rounded-tl-lg py-2 px-2 w-full bg-white ring-1 text-lg font-medium tracking-normal ring-white"
+          placeholder="Enter Your Email"
         />
         <button
-          class="bg-black h-12 rounded-tr-lg rounded-br-lg text-white text-sm font-bold px-2"
+          class="bg-blue-800 h-12 rounded-tr-lg rounded-br-lg text-white text-lg font-semibold tracking-wide px-3"
         >
           Subscribe
         </button>
@@ -44,19 +45,7 @@
             <span class="text-lg font-bold tracking-wide py-2 text-white underline underline-offset-8 decoration-gray-300"
               >Useful Links</span
             >
-            <ul class="list-none p-0 m-0 block py-3">
-              <li
-                v-for="exl in extraLink"
-                :key="exl.id"
-                class="py-1 translate-x-0 hover:translate-x-2 transition-all delay-100  text-center"
-              >
-                <router-link
-                  :to="exl.link"
-                  class="text-sm font-medium tracking-wide text-white"
-                  >{{ exl.name }}</router-link
-                >
-              </li>
-            </ul>
+            <FooterList :listData="extraLink" />
           </div>
         </div>
         <!-- 2st part end -->
@@ -67,20 +56,7 @@
             <span class="text-lg font-bold tracking-wide py-2 text-white underline underline-offset-8 decoration-gray-300"
               >Our Services</span
             >
-
-            <ul class="list-none p-0 m-0 block py-3">
-              <li
-                v-for="exs in extraServices"
-                :key="exs.id"
-                class="py-1 translate-x-0 hover:translate-x-2 transition-all delay-100  text-center"
-              >
-                <router-link
-                  :to="exs.link"
-                  class="text-sm font-medium tracking-wide text-white"
-                  >{{ exs.name }}</router-link
-                >
-              </li>
-            </ul>
+            <FooterList :listData="extraServices" />
           </div>
         </div>
         <!-- 3rd part end -->
@@ -95,23 +71,15 @@
               <li
                 v-for="addl in addressLink"
                 :key="addl.id"
-                class="py-1 translate-x-0 hover:translate-x-2 transition-all delay-100 text-sm font-medium tracking-wide text-white text-center"
+                class="py-1  text-sm font-medium tracking-wide text-white text-center flex justify-center gap-2"
               >
                 {{ addl.name }}
               </li>
             </ul>
-            <ul class="flex justify-center py-2 px-2 list-none gap-3">
-            <li>
-              <a href=""><i class="fa fa-facebook-square text-2xl text-white"></i></a>
+            <ul class="flex justify-center py-2 px-2 list-none gap-4">
+            <li v-for="social in socialLinks" :key="social.id">
+              <a :href="social.link" target="_blank"><i :class="social.icon" class="text-2xl text-white  scale-100  hover:scale-125 transition-all delay-100"></i></a>
             </li>
-            <li>
-              <a href=""><i class="fa fa-linkedin text-2xl text-white"></i></a>
-            </li>
-            
-            <li>
-              <a href=""><i class="fa fa-instagram text-2xl text-white"></i></a>
-            </li>
-          
           </ul>
           </div>
         </div>
@@ -130,6 +98,8 @@
 </template>
 
 <script>
+import FooterList from '@/components/footerpart/FooterList';
+
 export default {
   data() {
     return {
@@ -194,8 +164,28 @@ export default {
           icon: "",
         },
       ],
+      socialLinks:[
+        {
+          id:1,
+          icon:'fa fa-facebook-square',
+          link:'#',
+        },
+        {
+          id:2,
+          icon:'fa fa-linkedin',
+          link:'#',
+        },
+        {
+          id:3,
+          icon:'fa fa-instagram',
+          link:'#',
+        },
+      ]
     };
   },
+  components:{
+    FooterList
+  }
 };
 </script>
 
@@ -205,5 +195,9 @@ export default {
   background-position: center;
   background-size: cover;
   object-fit: cover;
+}
+
+.box{
+  background: rgb(28, 28, 57);
 }
 </style>
