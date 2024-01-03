@@ -1,94 +1,53 @@
 <template>
   <div class="block w-full footer-cover mt-5 relative">
     <!-- subscribe box -->
-    <div class="w-full h-auto px-6 py-3 flex justify-center">
-      <form
-        class="flex justify-center py-5 px-3 w-5/6 rounded-lg items-center box"
-        style="margin-top: -60px"
-      >
-        <p class="text-xl font-bold text-white py-1 px-1 w-1/3">Subscribe to our newsletter</p>
+    <div class="footer-subscribe">
+      <form class="box footer-subscribe-form">
+        <p class="footer-subscribe-text">Subscribe to our newsletter</p>
         <input
           type="text"
-          class="h-12 rounded-bl-lg rounded-tl-lg py-2 px-2 w-full bg-white ring-1 text-lg font-medium tracking-normal ring-white"
+          class="footer-subscribe-input"
           placeholder="Enter Your Email"
         />
-        <button
-          class="bg-blue-800 h-12 rounded-tr-lg rounded-br-lg text-white text-lg font-semibold tracking-wide px-3"
-        >
-          Subscribe
-        </button>
+        <button class="footer-subscribe-button">Subscribe</button>
       </form>
     </div>
     <!-- subscribe box end -->
-    <div class="px-10 py-2 flex justify-center w-full footer-cover">
-      <div class="w-full h-auto px-3 py-1 flex justify-start">
-        <!-- 1st part -->
-        <div class="block px-2 w-1/4 h-auto">
+
+    <!-- footer information -->
+    <div class="footer-info footer-cover">
+      <div class="footer-info-block">
+        <div class="footer-info-block-logo-block">
           <img
-            src="../../assets/logo/footer-logo.png"
-            class="w-24 h-14 flex justify-center px-2"
+            src="../../assets/logo/logic-info.png"
+            class="footer-info-block-logo-block-logo"
           />
-          <p
-            class="font-normal text-sm text-white tracking-wide text-justify mr-7 py-3"
-          >
+          <p class="footer-info-block-logo-block-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
             corporis nisi explicabo maiores sunt at similique rerum, quas
             exercitationem vitae, minima laudantium. Labore quas accusantium
             aspernatur placeat delectus eaque animi.
           </p>
-             
         </div>
-        <!-- 1st part end -->
-        <!-- 2st part -->
-        <div class="flex justify-center px-2 w-1/4 h-auto">
-          <div class="block">
-            <span class="text-lg font-bold tracking-wide py-2 text-white underline underline-offset-8 decoration-gray-300"
-              >Useful Links</span
-            >
-            <FooterList :listData="extraLink" />
-          </div>
+        <div class="footer-info-block-part">
+          <FooterList :listData="extraLink" name="Useful Links" />
         </div>
-        <!-- 2st part end -->
-
-        <!-- 3rd part -->
-        <div class="flex justify-center px-2 w-1/4 h-auto">
-          <div class="block">
-            <span class="text-lg font-bold tracking-wide py-2 text-white underline underline-offset-8 decoration-gray-300"
-              >Our Services</span
-            >
-            <FooterList :listData="extraServices" />
-          </div>
+        <div class="footer-info-block-part">
+          <FooterList :listData="extraServices" name="Our Services" />
         </div>
-        <!-- 3rd part end -->
-
-        <!-- 4th part -->
-        <div class="flex justify-center px-2 w-1/4 h-auto">
-          <div class="block">
-            <span class="text-lg font-bold tracking-wide py-2 text-white underline underline-offset-8 decoration-gray-300"
-              >Contact Information</span
-            >
-            <ul class="list-none py-3 m-0 block">
-              <li
-                v-for="addl in addressLink"
-                :key="addl.id"
-                class="py-1  text-sm font-medium tracking-wide text-white text-center flex justify-center gap-2"
-              >
-                {{ addl.name }}
-              </li>
-            </ul>
-            <ul class="flex justify-center py-2 px-2 list-none gap-4">
-            <li v-for="social in socialLinks" :key="social.id">
-              <a :href="social.link" target="_blank"><i :class="social.icon" class="text-2xl text-white  scale-100  hover:scale-125 transition-all delay-100"></i></a>
-            </li>
-          </ul>
-          </div>
+        <div class="footer-info-block-part">
+          <FooterInfo
+            name="Contact Information"
+            :infoDetails="addressLink"
+            :socialLinks="socialLinks"
+          />
         </div>
-        <!-- 4th part end -->
       </div>
     </div>
+    <!-- footer information end -->
 
     <!-- footer bottom -->
-    <div class="flex justify-center py-2 bg-black ring-1 ring-white">
+    <div class="flex justify-center py-2 ring-1 ring-white">
       <p class="text-sm font-normal text-gray-300">
         All Right Reserved Logic Software Ltd.
       </p>
@@ -98,7 +57,8 @@
 </template>
 
 <script>
-import FooterList from '@/components/footerpart/FooterList';
+import FooterList from "@/components/footerpart/FooterList";
+import FooterInfo from "@/components/footerpart/FooterInfo";
 
 export default {
   data() {
@@ -164,40 +124,43 @@ export default {
           icon: "",
         },
       ],
-      socialLinks:[
+      socialLinks: [
         {
-          id:1,
-          icon:'fa fa-facebook-square',
-          link:'#',
+          id: 1,
+          icon: "fa fa-facebook-square",
+          link: "#",
         },
         {
-          id:2,
-          icon:'fa fa-linkedin',
-          link:'#',
+          id: 2,
+          icon: "fa fa-linkedin",
+          link: "#",
         },
         {
-          id:3,
-          icon:'fa fa-instagram',
-          link:'#',
+          id: 3,
+          icon: "fa fa-instagram",
+          link: "#",
         },
-      ]
+      ],
     };
   },
-  components:{
-    FooterList
-  }
+  components: {
+    FooterList,
+    FooterInfo,
+  },
 };
 </script>
 
 <style scoped>
 .footer-cover {
-  background-image: url("../../assets/images/footer-bg2.jpg");
+  background-image: url("../../assets/images/1.jpg");
   background-position: center;
   background-size: cover;
   object-fit: cover;
 }
 
-.box{
-  background: rgb(28, 28, 57);
+.box {
+  background: rgb(27, 27, 124);
+  box-shadow: 0px 5px 10px rgb(112, 79, 194);
+  margin-top: -60px;
 }
 </style>

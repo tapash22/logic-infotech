@@ -1,27 +1,28 @@
 <template>
-  <div class="home block -mt-10 ">
-
-    <div class="flex w-full justify-start items-center px-14 home-header ">
-      <div class="block w-3/4 py-5 px-5 ">
-        <span class="text-lg font-medium tracking-wide py-3 text-white">
+  <div class="home -mt-10">
+    <div class="home-header home-banner">
+      <div class="banner-block">
+        <span
+          class="home-banner-title user-select-none"
+        >
           We provide the most advance digital solution
         </span>
         <p
-          class="border-l-4 border-white text-5xl font-bold my-5 px-2 text-white"
+          class="home-banner-subtitle user-select-none"
         >
           Leading Software Development Studio & Agency
         </p>
-        <div class="flex justify-start my-5 gap-3">
+        <div class="home-banner-icon-section">
           <div
-            class="w-20 h-20 rounded-full ring-1 ring-white flex justify-center items-center"
+            class="home-banner-icon-block"
           >
             <i
-              class="fa fa-play bg-white rounded-full w-16 h-16 flex justify-center items-center text-xl text-gray-600"
+              class="fa fa-play home-banner-icon"
               aria-hidden="true"
             ></i>
           </div>
           <p
-            class="text-2xl font-bold flex justify-center items-center text-white"
+            class="home-banner-icon-text user-select-none"
           >
             Watch Video
           </p>
@@ -29,7 +30,7 @@
       </div>
     </div>
     <!-- intro part -->
-    <div class="flex w-full h-auto px-14 py-10">
+    <div class="flex px-5 section">
       <!-- left side -->
       <div class="w-1/2 h-auto pr-32 block">
         <span class="text-sm font-normal tracking-wide flex justify-start">
@@ -113,53 +114,19 @@
     <!-- intro part end -->
 
     <!-- product list -->
-    <div class="block w-full h-auto px-5 py-10">
-      <span class="text-sm font-normal tracking-wide flex justify-center">
-        WHAT WE PROVIDE
-      </span>
-      <p class="text-3xl font-bold tracking-wide py-2 flex justify-center">
+    <div class="section">
+      <span class="section-title user-select-none"> WHAT WE PROVIDE </span>
+      <p class="section-subtitle user-select-none">
         We provide truly prominent Software solutions
       </p>
-      <div class="py-3 w-full h-auto flex justify-center gap-5 px-5">
-        <div
-          class="product-card rounded-lg bg-gray-300 px-3 py-4 shadow-sm shadow-gray-300 block scale-100 hover:scale-110 transition-all delay-100 cursor-pointer"
-          v-for="cardv in cardView"
-          :key="cardv.id"
-        >
-          <div class="flex justify-start w-full">
-            <i
-              class="icon-card w-20 h-20 rounded-full p-1 text-5xl bg-indigo-950 font-bold text-white flex justify-center items-center my-2"
-              :class="cardv.icon"
-            >
-            </i>
-          </div>
-          <p
-            class="text-2xl font-bold py-2 tracking-normal text-black leading-7"
-          >
-            {{ cardv.name }}
-          </p>
-          <p
-            class="text-sm font-medium py-3 px-1 tracking-normal text-black text-justify"
-          >
-            {{ cardv.text }}
-          </p>
-        </div>
-      </div>
+      <ProductCard :cardView="cardView" />
     </div>
     <!-- product list end -->
 
     <!-- client part -->
-    <div class="w-full h-auto px-0 py-10 bg-white bloack">
-      <span
-        class="text-sm font-normal tracking-wide flex justify-center w-full"
-      >
-        PROJECTS
-      </span>
-      <p
-        class="text-3xl font-bold tracking-wide py-2 flex justify-center w-full"
-      >
-        Our valuable client
-      </p>
+    <div class="section ">
+      <span class="section-title user-select-none"> PROJECTS </span>
+      <p class="section-subtitle user-select-none">Our valuable client</p>
       <div class="px-8 py-3">
         <PartnerSwiper />
       </div>
@@ -167,29 +134,22 @@
     <!-- client part end -->
 
     <!-- testimonial part -->
-    <div class="w-full h-auto px-0 py-10 bg-gray-300 bloack">
-      <span
-        class="text-sm font-normal tracking-wide flex justify-center w-full"
-      >
-        TESTIMONIAL
-      </span>
-      <p
-        class="text-3xl font-bold tracking-wide py-2 flex justify-center w-full"
-      >
+    <div class=" bg-gray-300 section ">
+      <span class="section-title user-select-none"> TESTIMONIAL </span>
+      <p class="section-subtitle user-select-none">
         20k+ satisfied clients worldwide
       </p>
       <div class="px-12 py-3">
-        <Swiper />
+        <SwiperView />
       </div>
     </div>
     <!-- testimonial part end -->
 
     <!-- contact block -->
-    <div class="flex w-full h-auto px-5 py-10">
-      <!-- left side -->
+    <div class="flex section px-5">
       <div class="w-1/2 h-auto block px-3 py-3">
         <h1
-          class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5"
+          class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5 user-select-none"
         >
           To make requests for further information, contact us
         </h1>
@@ -214,89 +174,76 @@
           </div>
         </div>
       </div>
-      <!-- left side end -->
-
-      <!-- right side -->
       <div
-        class="w-1/2 h-auto bg-gray-300 py-4 flex justify-center items-center rounded-lg"
+        class="message-section"
       >
-        <form class="w-full px-5 py-2 block" @submit="mailSubmit">
-          <span
-            class="text-sm uppercase font-normal tracking-wider flex justify-center"
-            >LEAVE US MASSAGE</span
-          >
-          <h1 class="font-bold tracking-wide flex justify-center text-2xl">
-            How May We Help You!
-          </h1>
+        <form class="submit-form" @submit="mailSubmit">
+          <span class="form-title">LEAVE US MASSAGE</span>
+          <h1 class="form-subtitle">How May We Help You!</h1>
           <div class="block">
-            <label class="w-full py-2 text-sm font-medium tracking-wide"
-              >Name</label
-            >
+            <label class="form-label">Name</label>
             <input
               type="text"
               v-model="mailForm.name"
-              class="h-10 w-full bg-white rounded-lg py-2 px-2 text-sm font-bold tracking-wide"
+              class="form-input"
               placeholder="Full Name"
             />
           </div>
           <div class="block">
-            <label class="w-full py-2 text-sm font-bold tracking-wide"
-              >Email</label
-            >
+            <label class="form-label">Email</label>
             <input
               type="text"
               v-model="mailForm.email"
-              class="h-10 w-full bg-white rounded-lg py-2 px-2 text-sm font-bold tracking-wide"
+              class="form-input"
               placeholder="Email"
             />
           </div>
           <div class="block">
-            <label class="w-full py-2 text-sm font-bold tracking-wide"
-              >Subject</label
-            >
+            <label class="form-label">Subject</label>
             <input
               type="text"
               v-model="mailForm.subject"
-              class="h-10 w-full bg-white rounded-lg py-2 px-2 text-sm font-bold tracking-wide"
+              class="form-input"
               placeholder="Subject"
             />
           </div>
           <div class="block">
-            <label class="w-full py-2 text-sm font-bold tracking-wide"
-              >Message</label
-            >
+            <label class="form-label">Message</label>
             <textarea
               v-model="mailForm.message"
-              class="w-full py-2 px-2 text-sm font-bold tracking-wide h-auto"
+              class="form-textarea"
               placeholder="Write A Message"
             >
             </textarea>
           </div>
           <div class="w-full py-2 block">
-            <button
-              class="text-sm font-bold bg-gray-600 text-white w-full py-3 rounded-lg"
-              type="submit"
-            >
-              Send Message
-            </button>
+            <button class="form-button" type="submit">Send Message</button>
           </div>
         </form>
       </div>
-      <!-- right side end -->
     </div>
     <!-- contact block end -->
   </div>
 </template>
 
 <script>
-import Swiper from "@/components/swiper/SwiperView.vue";
+import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
+import ProductCard from '@/components/card/ProductCard';
+// import { introduce,information,cardView } from '../jsonStore/store';
 
 export default {
   name: "Home",
 
   data() {
     return {
+      mailForm: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+
       introduce: [
         {
           id: 1,
@@ -309,12 +256,7 @@ export default {
           details: "Accelerate innovation with world-class tech teams",
         },
       ],
-      mailForm: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      },
+
       information: [
         {
           id: 1,
@@ -366,8 +308,9 @@ export default {
     };
   },
   components: {
-    Swiper,
+    SwiperView,
     PartnerSwiper,
+    ProductCard
   },
 
   methods: {
@@ -382,26 +325,12 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
-/* .navigation{
-  background: yellow;
-} */
-
-.product-card i {
-  transition: transform 0.3s ease-in-out; 
-}
-.product-card:hover i {
-  transform: translateX(100%);
-}
-
 .home-header {
   /* background-image: url("../assets/images/hero2-bg.jpg"); */
   background-image: url("../assets/images/1.jpg");
   /* background-image: url("../assets/images/2.jpg"); */
   /* background-image: url("../assets/images/3.jpg"); */
-  /* background-position: center; */
-  /* border-bottom-left-radius: 50%; */
   background-size: cover;
-  /* border-bottom-right-radius: 75%; */
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

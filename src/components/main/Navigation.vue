@@ -6,7 +6,7 @@
         class="px-16 py-0 flex justify-center w-full shadow-xl shadow-blue-900  z-50"
       >
         <div class="w-1/4 flex justify-start py-2">
-          <img src="../../assets/logo/info.png" class="w-28 h-16" />
+          <img src="../../assets/logo/logic-info.png"  />
         </div>
         <ul class="w-3/4 flex justify-end items-center list-none gap-4">
           <li v-for="navL in navLinks" :key="navL.id">

@@ -12,11 +12,11 @@
       <slide v-for="partner in partners" :key="partner.id">
         <div class="py-3">
           <div
-            class="w-full h-auto flex justify-center items-center bg-white px-2"
+            class="w-full h-auto flex justify-center items-center  px-2 "
           >
             <img
               :src="partner.image"
-              class="ring-2 ring-indigo-900 rounded-lg w-44"
+              class="ring-2 ring-indigo-900 rounded-lg w-44 shadow-lg border-2 border-indigo-900 shadow-indigo-950 p-2 scale-100 hover:scale-110 transition-all delay-150"
             />
           </div>
         </div>
