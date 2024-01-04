@@ -74,25 +74,57 @@
       <div class="grid grid-cols-4 gap-3 py-2 px-5">
         <div v-for="i in 8" :key="i" class="bg-gray-400 py-3 rounded-lg px-3">
           <div class="product-icon-block">
-            <i class="icon-card product-icon fa fa-code" > </i>
+            <i class="icon-card product-icon fa fa-code"> </i>
           </div>
           <p class="product-type">
             {{ i }}
           </p>
           <p class="product-details">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quidem nesciunt, saepe laborum, quia ab quam nostrum autem, odio voluptatibus aspernatur itaque. Architecto eligendi nisi minus deserunt quasi, tempore dolorum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+            quidem nesciunt, saepe laborum, quia ab quam nostrum autem, odio
+            voluptatibus aspernatur itaque. Architecto eligendi nisi minus
+            deserunt quasi, tempore dolorum.
           </p>
         </div>
       </div>
     </div>
     <!-- product list end -->
 
-    <div class=" section">
-      <span class="section-title user-select-none"> OUR EXPERT TEAM </span>
-      <p class="section-subtitle user-select-none">
+    <div class="section background-image">
+      <span class="section-title text-white user-select-none">
+        OUR EXPERT TEAM
+      </span>
+      <p class="section-subtitle text-white user-select-none">
         We have world expert team
       </p>
+      <div class="px-5 py-2 flex justify-center">
+        <div
+          v-for="ourT in ourTeams"
+          :key="ourT.id"
+          class="relative w-full h-auto"
+        >
+          <img :src="ourT.image" class="w-full h-full" />
+          <div
+            class="absolute top-2/4 left-0 right-0  bg-opacity-50 text-white p-2"
+          >
+            <div class="block px-2">
+              <p class="text-xl font-bold text-black">
+                {{ ourT.name }}
+              </p>
+              <p class="text-lg font-medium text-black">
+                {{ ourT.designation }}
+              </p>
+            </div>
+
+            <ul class="flex justify-start gap-3 px-2 ">
+              <li v-for="social in ourT.social" :key="social">
+                <i :class="social" class="text-2xl font-bold text-indigo-950"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
 
     <!-- testimonial part -->
     <div class="bg-gray-300 section">
@@ -136,6 +168,52 @@ export default {
             "Accelerate innovation with world-class tech teams. We help businesses elevate their value.",
         },
       ],
+      ourTeams: [
+        {
+          id: 1,
+          image: require("../assets/images/testi-1.jpg"),
+          name: "Tapash paul",
+          designation: "Frontend Developer",
+          social: [
+            "fa fa-facebook-square",
+            "fa fa-linkedin",
+            "fa fa-instagram",
+          ],
+        },
+        {
+          id: 2,
+          image: require("../assets/images/testi-2.jpg"),
+          name: "Tapash paul",
+          designation: "Frontend Developer",
+          social: [
+            "fa fa-facebook-square",
+            "fa fa-linkedin",
+            "fa fa-instagram",
+          ],
+        },
+        {
+          id: 3,
+          image: require("../assets/images/testi-1.jpg"),
+          name: "Tapash paul",
+          designation: "Frontend Developer",
+          social: [
+            "fa fa-facebook-square",
+            "fa fa-linkedin",
+            "fa fa-instagram",
+          ],
+        },
+        {
+          id: 4,
+          image: require("../assets/images/testi-2.jpg"),
+          name: "Tapash paul",
+          designation: "Frontend Developer",
+          social: [
+            "fa fa-facebook-square",
+            "fa fa-linkedin",
+            "fa fa-instagram",
+          ],
+        },
+      ],
     };
   },
   components: {
@@ -151,6 +229,17 @@ export default {
   background-image: url("../assets/images/2.jpg");
   /* background-image: url("../assets/images/2.jpg"); */
   /* background-image: url("../assets/images/3.jpg"); */
+  background-size: cover;
+  height: 100vh;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.background-image {
+  /* background-image: url("../assets/images/hero2-bg.jpg"); */
+  /* background-image: url("../assets/images/2.jpg"); */
+  /* background-image: url("../assets/images/2.jpg"); */
+  background-image: url("../assets/images/3.jpg");
   background-size: cover;
   height: 100vh;
   object-fit: cover;
