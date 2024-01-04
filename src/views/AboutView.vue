@@ -101,13 +101,15 @@
         <div
           v-for="ourT in ourTeams"
           :key="ourT.id"
-          class="relative w-full h-auto"
+          class="relative w-full h-auto group"
         >
           <img :src="ourT.image" class="w-full h-full" />
           <div
-            class="absolute top-2/4 left-0 right-0  bg-opacity-50 text-white p-2"
+            class="absolute top-2/4 left-0 right-0 bg-opacity-50 text-white p-2 group-hover:bg-opacity-100"
           >
-            <div class="block px-2">
+            <div
+              class="flex flex-col px-2 space-y-2 transition-transform transform -translate-y-1/2 group-hover:-translate-y-full"
+            >
               <p class="text-xl font-bold text-black">
                 {{ ourT.name }}
               </p>
@@ -116,9 +118,12 @@
               </p>
             </div>
 
-            <ul class="flex justify-start gap-3 px-2 ">
+            <ul class="flex justify-start gap-3 px-2 hidden group-hover:flex ">
               <li v-for="social in ourT.social" :key="social">
-                <i :class="social" class="text-2xl font-bold text-indigo-950"></i>
+                <i
+                  :class="social"
+                  class="text-2xl font-bold text-indigo-950"
+                ></i>
               </li>
             </ul>
           </div>
@@ -140,10 +145,6 @@
       </div>
     </div>
     <!-- testimonial part end -->
-
-    <!-- contact block -->
-
-    <!-- contact block end -->
   </div>
 </template>
 
@@ -241,7 +242,7 @@ export default {
   /* background-image: url("../assets/images/2.jpg"); */
   background-image: url("../assets/images/3.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
   object-fit: cover;
   margin-bottom: 50px;
 }
