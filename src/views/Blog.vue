@@ -1,57 +1,19 @@
 <template>
   <div class="home -mt-10">
     <div class="home-header home-banner">
-      <p class="text-5xl font-bold text-white flex justify-center w-full">
+      <p class="page-heading">
         Blog
       </p>
     </div>
     <div class="section">
-      <div class="grid grid-cols-3 gap-5 py-5 px-5">
-       <div
-  v-for="blogL in blogList"
-  :key="blogL.id"
-  class="relative w-full h-auto group my-4"
->
- <div class="overflow-hidden rounded-lg">
-  <img
-    :src="blogL.image"
-    class="w-full h-full scale-100 hover:scale-110 transition-all delay-100 rounded-lg "
-  />
- </div>
-  <div class="absolute top-4 left-4 bg-indigo-950 opacity-85 block px-4 py-2 rounded-lg">
-    <p class="text-xl font-bold flex justify-center text-white">
-      {{ blogL.day }}
-    </p>
-    <p class="text-xl font-medium flex justify-center text-white">
-      {{ blogL.month }}
-    </p>
-  </div>
-
-  <div class="absolute -bottom-16 left-3 right-3 bg-white shadow-lg shadow-gray-200 block px-4 py-4">
-    <ul class="flex justify-start gap-4 list-none">
-      <li class="flex justify-between gap-2" v-for="bl in blogL.infoList" :key="bl.id">
-        <i :class="bl.icon" class="text-sm font-bold text-indigo-950"></i>
-        <span v-if="bl.count" class="text-sm font-normal">{{ bl.count }}</span>
-        <span class="text-sm font-normal text-black">
-          {{ bl.title }}
-        </span>
-      </li>
-    </ul>
-    <p class="text-lg font-bold tracking-wide text-black py-2 leading-5">
-      {{ blogL.title }}
-    </p>
-    <p class="text-lg font-normal py-2 px-2 text-indigo-900 tracking-wide">
-      Read More <i class="fa fa-arrow-right font-thin text-sm text-indigo-950"></i>
-    </p>
-  </div>
-</div>
-
-      </div>
+      <BlogCard :blogList="blogList" />
     </div>
   </div>
 </template>
 
 <script>
+import BlogCard from '@/components/card/BlogCard.vue';
+
 export default {
   data() {
     return {
@@ -239,6 +201,14 @@ export default {
 
       ],
     };
+  },
+
+  components: {
+    BlogCard
+  },
+
+  mounted() {
+    window.scrollTo(0, 0)
   },
 };
 </script>

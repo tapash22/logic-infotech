@@ -4,17 +4,17 @@
     <!-- intro part -->
     <div class="flex px-5 section">
       <div class="w-1/2 h-auto flex justify-center">
-        <div class="w-full h-auto px-2 flex justify-center gap-3 rounded-xl">
+        <div class="w-full h-auto px-2 flex justify-center items-center gap-3 rounded-xl">
           <div class="">
             <img
               src="../assets/images/about-2.jpg"
-              class="object-cover w-full h-full rounded-lg"
+              class="object-cover w-full h-[450px] rounded-lg"
             />
           </div>
           <div class="">
             <img
               src="../assets/images/about1.jpg"
-              class="object-cover w-full h-auto rounded-lg -mt-10"
+              class="object-cover w-full h-[450px] rounded-lg -mt-10"
             />
           </div>
         </div>
@@ -38,17 +38,13 @@
         </p>
 
         <!-- last part -->
-        <div class="w-full my-3 px-3 flex justify-between gap-5">
+        <div class="w-full my-3 px-2 flex justify-between gap-2 ">
           <div
             class="block bg-gray-200 rounded-lg py-3 px-3"
             v-for="intro in introduce"
             :key="intro.id"
           >
             <div class="flex justify-center">
-              <!-- <i
-                class="fa fa-arrow-right text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center"
-                aria-hidden="true"
-              ></i> -->
               <span class="tracking-wide text-black text-lg font-bold">
                 {{ intro.name }}
               </span>
@@ -221,6 +217,11 @@ export default {
     SwiperView,
     PartnerSwiper,
   },
+
+  mounted(){
+        window.scrollTo(0,0)
+    },
+
 };
 </script>
 
