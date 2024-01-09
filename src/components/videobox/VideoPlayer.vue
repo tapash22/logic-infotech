@@ -2,8 +2,8 @@
 <template>
     <div>
       <iframe
-        width="560"
-        height="315"
+        width="800"
+        height="400"
         :src="videoUrl"
         frameborder="0"
         allowfullscreen

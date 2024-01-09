@@ -3,33 +3,33 @@
     <div class="home-header home-banner"></div>
     <!-- intro part -->
     <div class="flex px-5 section">
-      <div class="w-1/2 h-auto flex justify-center">
-        <div class="w-full h-auto px-2 flex justify-center items-center gap-3 rounded-xl">
+      <div class="intro-block">
+        <div class="intro-block-left">
           <div class="">
             <img
               src="../assets/images/about-2.jpg"
-              class="object-cover w-full h-[450px] rounded-lg"
+              class="intro-block-left-image"
             />
           </div>
           <div class="">
             <img
               src="../assets/images/about1.jpg"
-              class="object-cover w-full h-[450px] rounded-lg -mt-10"
+              class="intro-block-left-image2"
             />
           </div>
         </div>
       </div>
-      <div class="w-1/2 h-auto pr-32 block pl-9">
-        <span class="text-sm font-normal tracking-wide flex justify-start">
+      <div class="intro-block-right">
+        <span class="intro-block-right-title">
           WHO WE ARE
         </span>
         <p
-          class="text-5xl font-bold tracking-normal py-3 flex justify-center leading-none"
+          class="intro-block-right-subtitle"
         >
           We run all kinds of software services that vow your success
         </p>
         <p
-          class="text-sm font-medium tracking-normal text-justify break-words leading-7 py-2"
+          class="intro-block-right-text"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi
           tenetur, amet eveniet a placeat voluptatum natus doloremque cumque
@@ -38,19 +38,19 @@
         </p>
 
         <!-- last part -->
-        <div class="w-full my-3 px-2 flex justify-between gap-2 ">
+        <div class="intro-block-bottom">
           <div
-            class="block bg-gray-200 rounded-lg py-3 px-3"
+            class="intro-block-bottom-card"
             v-for="intro in introduce"
             :key="intro.id"
           >
-            <div class="flex justify-center">
-              <span class="tracking-wide text-black text-lg font-bold">
+            <div class="intro-block-bottom-card-first">
+              <span class="intro-block-bottom-card-first-title">
                 {{ intro.name }}
               </span>
             </div>
             <p
-              class="text-sm font-normal text-indigo-950 flex justify-center text-justify py-2"
+              class="intro-block-bottom-card-first-details"
             >
               {{ intro.details }}
             </p>
@@ -67,19 +67,16 @@
       <p class="section-subtitle user-select-none">
         We provide truly prominent IT solutions.
       </p>
-      <div class="grid grid-cols-4 gap-3 py-2 px-5">
-        <div v-for="i in 8" :key="i" class="bg-gray-400 py-3 rounded-lg px-3">
-          <div class="product-icon-block">
-            <i class="icon-card product-icon fa fa-code"> </i>
+      <div class="intro-block-product">
+        <div v-for="ours in ourSolution" :key="ours.id" class="intro-block-product-card">
+          <div class="product-icon-block py-3">
+           <img :src="ours.image" />
           </div>
           <p class="product-type">
-            {{ i }}
+            {{ ours.title }}
           </p>
           <p class="product-details">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            quidem nesciunt, saepe laborum, quia ab quam nostrum autem, odio
-            voluptatibus aspernatur itaque. Architecto eligendi nisi minus
-            deserunt quasi, tempore dolorum.
+            {{ours.details}}
           </p>
         </div>
       </div>
@@ -93,32 +90,32 @@
       <p class="section-subtitle text-white user-select-none">
         We have world expert team
       </p>
-      <div class="px-5 py-2 flex justify-center">
+      <div class="team-expart-block">
         <div
           v-for="ourT in ourTeams"
           :key="ourT.id"
           class="relative w-full h-auto group"
         >
-          <img :src="ourT.image" class="w-full h-full" />
+          <img :src="ourT.image" class="team-expart-block-image" />
           <div
             class="absolute top-2/4 left-0 right-0 bg-opacity-50 text-white p-2 group-hover:bg-opacity-100"
           >
             <div
-              class="flex flex-col px-2 space-y-2 transition-transform transform -translate-y-1/2 group-hover:-translate-y-full"
+              class="team-expart-block-details"
             >
-              <p class="text-xl font-bold text-black">
+              <p class="team-expart-block-details-name">
                 {{ ourT.name }}
               </p>
-              <p class="text-lg font-medium text-black">
+              <p class="team-expart-block-details-designation">
                 {{ ourT.designation }}
               </p>
             </div>
 
-            <ul class="flex justify-start gap-3 px-2 hidden group-hover:flex ">
+            <ul class="team-expart-block-details-ul">
               <li v-for="social in ourT.social" :key="social">
                 <i
                   :class="social"
-                  class="text-2xl font-bold text-indigo-950"
+                  class="team-expart-block-details-ul-icon"
                 ></i>
               </li>
             </ul>
@@ -128,15 +125,15 @@
     </div>
 
     <!-- testimonial part -->
-    <div class="bg-gray-300 section">
+    <div class="px-0 section">
       <span class="section-title user-select-none"> TESTIMONIAL </span>
       <p class="section-subtitle user-select-none">
         20k+ satisfied clients worldwide
       </p>
-      <div class="px-12 py-3">
+      <div class="testemonial-swiper">
         <SwiperView />
       </div>
-      <div class="px-8 py-3">
+      <div class="testemonial-partner-swiper">
         <PartnerSwiper />
       </div>
     </div>
@@ -211,6 +208,57 @@ export default {
           ],
         },
       ],
+
+      ourSolution:[
+        {
+          id:1,
+          title:'Infrustructure Technology',
+          image:require('../assets/icon-image/1.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:2,
+          title:'Highly professional team members',
+          image:require('../assets/icon-image/2.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:3,
+          title:'Security Management',
+          image:require('../assets/icon-image/3.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:4,
+          title:'Desktop Computing',
+          image:require('../assets/icon-image/4.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:5,
+          title:'Infrustructure Technology',
+          image:require('../assets/icon-image/5.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:6,
+          title:'Ideas for high return investment',
+          image:require('../assets/icon-image/6.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:7,
+          title:'Fully high IT Managment',
+          image:require('../assets/icon-image/7.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+        {
+          id:8,
+          title:'Data secure & Managment',
+          image:require('../assets/icon-image/8.png'),
+          details:'Accelerate innovation with world-class tech teams We’ll match you to an entire.'
+        },
+      ]
     };
   },
   components: {

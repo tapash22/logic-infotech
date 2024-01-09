@@ -1,6 +1,6 @@
 <template>
     <div class="blog-content">
-        <div v-for="blogL in blogList" :key="blogL.id" class="relative w-full h-auto group my-4">
+        <div v-for="blogL in blogList" :key="blogL.id" class="relative w-full h-auto group my-10">
             <div class="blog-part-image-block">
                 <img :src="blogL.image"
                     class="blog-card-image" />

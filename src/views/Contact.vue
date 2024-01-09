@@ -102,13 +102,13 @@ export default {
         {
           id: 2,
           title: "Drop us a line",
-          name: "info@example.com",
+          name: "info@logicinfotech.com",
           icon: "fa fa-envelope-o",
         },
         {
           id: 3,
           title: "Visit our office",
-          name: "Road:04,Banani,Dhaka",
+          name: "House:85, Road:04, Banani, Dhaka",
           icon: "fa fa-map-marker",
         },
       ],
