@@ -1,9 +1,10 @@
 <template>
   <div class="product-view">
-    <div
+    <router-link
       class="product-card product-card-view"
       v-for="cardv in cardView"
       :key="cardv.id"
+      :to="{ name: 'productDetails', params: { id: cardv.id }, query: { data: JSON.stringify(cardv) } }"
     >
       <div class="product-icon-block">
         <i class="icon-card product-icon" :class="cardv.icon"> </i>
@@ -14,7 +15,7 @@
       <p class="product-details">
         {{ cardv.text }}
       </p>
-    </div>
+    </router-link>
   </div>
 </template>
 

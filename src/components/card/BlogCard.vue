@@ -27,9 +27,9 @@
                 <p class="blog-card-details-block-list-title">
                     {{ blogL.title }}
                 </p>
-                <p class="blog-card-details-block-list-link">
+                <router-link class="blog-card-details-block-list-link" :to="{ name: 'blogdetails', params: { id: blogL.id }, query: { data: JSON.stringify(blogL) } }">
                     Read More <i class="fa fa-arrow-right blog-card-details-block-list-link-icon"></i>
-                </p>
+                </router-link>
             </div>
         </div>
     </div>
