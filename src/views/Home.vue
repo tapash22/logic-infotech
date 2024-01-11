@@ -21,7 +21,6 @@
       <!-- left side -->
       <IntroBlock :title="title" :subtitle="subtitle" :introText="introText" :introBox="introBox" :introduce="introduce"/>
       <!-- left end -->
-
       <!-- right side -->
       <div class="w-1/2 h-auto flex justify-center items-end">
         <div
