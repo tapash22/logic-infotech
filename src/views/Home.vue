@@ -19,62 +19,7 @@
     <!-- intro part -->
     <div class="flex px-5 section">
       <!-- left side -->
-      <div class="w-1/2 h-auto pr-32 block">
-        <span class="text-sm font-normal tracking-wide flex justify-start">
-          WHO WE ARE
-        </span>
-        <p
-          class="text-5xl font-bold tracking-normal py-3 flex justify-center leading-none"
-        >
-          We run all kinds of software services that vow your success
-        </p>
-        <p
-          class="text-sm font-medium tracking-normal text-justify break-words leading-7 py-2"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi
-          tenetur, amet eveniet a placeat voluptatum natus doloremque cumque
-          cupiditate adipisci officia alias, illo voluptate unde veniam maxime
-          accusantium. Nam.
-        </p>
-
-        <div class="px-3 py-5 bg-gray-300 rounded-lg flex justify-center my-4">
-          <!-- <span class="text-3xl font-bold text-indigo-950 px-2">	&#34;</span> -->
-          <i
-            class="fa fa-share text-3xl font-bold text-indigo-950 px-2 flex items-center"
-            aria-hidden="true"
-          ></i>
-          <p
-            class="text-lg font-bold px-2 tracking-wide text-center text-indigo-950"
-          >
-            Accelerate innovation with world-class tech teams We’ll match you to
-            an entire remote.
-          </p>
-        </div>
-        <!-- last part -->
-        <div class="w-full my-3 px-3 flex justify-between gap-5">
-          <div
-            class="block bg-gray-200 rounded-lg py-3 px-3"
-            v-for="intro in introduce"
-            :key="intro.id"
-          >
-            <div class="flex justify-center">
-              <i
-                class="fa fa-arrow-right text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center"
-                aria-hidden="true"
-              ></i>
-              <span class="tracking-wide text-black text-lg font-bold">
-                {{ intro.name }}
-              </span>
-            </div>
-            <p
-              class="text-sm font-normal text-indigo-950 flex justify-center text-justify py-2"
-            >
-              {{ intro.details }}
-            </p>
-          </div>
-        </div>
-        <!-- last part end -->
-      </div>
+      <IntroBlock :title="title" :subtitle="subtitle" :introText="introText" :introBox="introBox" :introduce="introduce"/>
       <!-- left end -->
 
       <!-- right side -->
@@ -165,13 +110,21 @@ import VideoPlayer from "@/components/videobox/VideoPlayer";
 import HeadingTitle from "@/components/main/HeadingTitle.vue";
 import ContactInformation from "@/components/main/ContactInformation.vue";
 import ContactForm from '@/components/form/ContactForm'
+import IntroBlock from "@/components/card/IntroBlock.vue";
 // import { introduce,information,cardView } from '../jsonStore/store';
 
 export default {
   name: "Home",
   data() {
     return {
-     buttonClass: 'form-button',
+      title:"WHO WE ARE",
+      subtitle:"We run all kinds of software services that vow your success",
+      introText:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi tenetur, amet eveniet a placeat voluptatum natus doloremque cumque cupiditate adipisci officia alias, illo voluptate unde veniam maxime accusantium. Nam.",
+      introBox:{
+        icon:'fa fa-share',
+        details:"Accelerate innovation with world-class tech teams We’ll match you to an entire remote."
+      },
+      buttonClass: 'form-button',
      formInput:'form-input',
      formTextarea:'form-textarea',
       show: false,
@@ -180,11 +133,13 @@ export default {
         {
           id: 1,
           name: "Expert Team",
+          icon:'fa fa-arrow-right',
           details: "Accelerate innovation with world-class tech teams",
         },
         {
           id: 2,
           name: "Custom Code",
+          icon:'fa fa-arrow-right',
           details: "Accelerate innovation with world-class tech teams",
         },
       ],
@@ -350,7 +305,8 @@ export default {
     VideoPlayer,
     HeadingTitle,
     ContactInformation,
-    ContactForm
+    ContactForm,
+    IntroBlock
   },
 
   mounted() {

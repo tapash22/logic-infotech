@@ -19,45 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="intro-block-right">
-        <span class="intro-block-right-title">
-          WHO WE ARE
-        </span>
-        <p
-          class="intro-block-right-subtitle"
-        >
-          We run all kinds of software services that vow your success
-        </p>
-        <p
-          class="intro-block-right-text"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi
-          tenetur, amet eveniet a placeat voluptatum natus doloremque cumque
-          cupiditate adipisci officia alias, illo voluptate unde veniam maxime
-          accusantium. Nam.
-        </p>
-
-        <!-- last part -->
-        <div class="intro-block-bottom">
-          <div
-            class="intro-block-bottom-card"
-            v-for="intro in introduce"
-            :key="intro.id"
-          >
-            <div class="intro-block-bottom-card-first">
-              <span class="intro-block-bottom-card-first-title">
-                {{ intro.name }}
-              </span>
-            </div>
-            <p
-              class="intro-block-bottom-card-first-details"
-            >
-              {{ intro.details }}
-            </p>
-          </div>
-        </div>
-        <!-- last part end -->
-      </div>
+      <IntroBlock :title="title" :subtitle="subtitle" :introText="introText" :introduce="introduce"  />
     </div>
     <!-- intro part end -->
 
@@ -143,10 +105,14 @@ import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import HeadingTitle from "@/components/main/HeadingTitle.vue";
 import HeaderImage from "@/components/main/HeaderImage.vue";
+import IntroBlock from "@/components/card/IntroBlock.vue";
 
 export default {
   data() {
     return {
+      title:"WHO WE ARE",
+      subtitle:"We run all kinds of software services that vow your success",
+      introText:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi tenetur, amet eveniet a placeat voluptatum natus doloremque cumque cupiditate adipisci officia alias, illo voluptate unde veniam maxime accusantium. Nam.",
       backgroundImage:'home-header',
       introduce: [
         {
@@ -265,7 +231,8 @@ export default {
     SwiperView,
     PartnerSwiper,
     HeadingTitle,
-    HeaderImage
+    HeaderImage,
+    IntroBlock
   },
 
   mounted(){
