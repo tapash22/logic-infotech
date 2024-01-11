@@ -3,8 +3,35 @@
     <div class="home-header home-banner">
       <p class="page-heading">Services</p>
     </div>
-    <div class="section">
-      <ServiceBlock :ourServices="ourServices" />
+    <div class="section relative">
+      <ServiceBlock :ourServices="ourServices" @serviceView="serviceView" />
+      <div
+        v-if="show"
+        class="absolute w-full h-auto left-0 top-40 flex justify-center "
+      >
+        <div
+          class="w-1/2 h-auto py-5 px-5 bg-white rounded-lg block shadow-xl shadow-gray-400"
+        >
+          <div class="product-icon-block py-3">
+            <img :src="service.image" />
+          </div>
+          <p class="product-type">
+            {{ service.title }}
+          </p>
+          <p class="product-details leading-7">
+            {{ service.details }}
+          </p>
+          <p class="text-sm font-medium tracking-wide text-justify">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
+            quam autem facilis sunt mollitia accusamus facere laboriosam quos.
+            Aperiam voluptate maxime minus, et aut magnam expedita qui. Tempore,
+            cupiditate atque!
+          </p>
+        </div>
+        <div class="absolute" >
+          <i class="fa fa-times font-normal text-2xl text-red-500" @click="closeView"></i>
+        </div>
+      </div>
     </div>
 
     <!-- contact information -->
@@ -38,7 +65,10 @@
 
     <!-- testimonial part -->
     <div class="section px-0">
-      <HeadingTitle title="TESTIMONIAL" subtitle="20k+ satisfied clients worldwide" />
+      <HeadingTitle
+        title="TESTIMONIAL"
+        subtitle="20k+ satisfied clients worldwide"
+      />
       <div class="testemonial-swiper">
         <SwiperView />
       </div>
@@ -47,19 +77,24 @@
       </div>
     </div>
     <!-- testimonial part end -->
+
+    <!-- modal view -->
+
+    <!-- modal view end -->
   </div>
 </template>
-
 
 <script>
 import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import ServiceBlock from "@/components/card/ServiceBlock.vue";
-import HeadingTitle from '@/components/main/HeadingTitle'
+import HeadingTitle from "@/components/main/HeadingTitle";
 
 export default {
   data() {
     return {
+      show: false,
+      service: {},
       ourServices: [
         {
           id: 1,
@@ -121,11 +156,22 @@ export default {
     };
   },
 
-  components:{
+  methods: {
+    serviceView(data) {
+      this.service = data;
+      this.show = true;
+    },
+
+    closeView(){
+      this.show = false;
+    }
+  },
+
+  components: {
     SwiperView,
     PartnerSwiper,
     ServiceBlock,
-    HeadingTitle
+    HeadingTitle,
   },
 
   mounted() {
