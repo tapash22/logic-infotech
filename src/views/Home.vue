@@ -122,10 +122,7 @@
 
     <!-- testimonial part -->
     <div class="bg-gray-300 section">
-      <span class="section-title user-select-none"> TESTIMONIAL </span>
-      <p class="section-subtitle user-select-none">
-        20k+ satisfied clients worldwide
-      </p>
+      <HeadingTitle title="TESTIMONIAL" subtitle="20k+ satisfied clients worldwide" />
       <div class="px-12 py-3">
         <SwiperView />
       </div>
@@ -134,77 +131,9 @@
 
     <!-- contact block -->
     <div class="flex section px-5">
-      <div class="w-1/2 h-auto block px-3 py-3">
-        <h1
-          class="font-bold tracking-wide flex justify-start px-2 text-3xl border-l-4 border-indigo-500 mr-36 mb-5 user-select-none"
-        >
-          To make requests for further information, contact us
-        </h1>
-        <div
-          class="flex w-full my-2 py-3 px-2"
-          v-for="info in information"
-          :key="info.id"
-        >
-          <div class="w-1/4 h-auto flex justify-center items-center">
-            <i
-              :class="info.icon"
-              class="text-6xl fonr-bold text-indigo-950"
-            ></i>
-          </div>
-          <div class="w-2/4 block px-1">
-            <h3 class="font-bold tracking-normal flex justify-start text-2xl">
-              {{ info.property }}
-            </h3>
-            <p class="break-all text-sm font-bold text-black mr-16">
-              {{ info.value }}
-            </p>
-          </div>
-        </div>
-      </div>
+      <ContactInformation title="To make requests for further information, contact us" :information="information" />
       <div class="message-section">
-        <form class="submit-form" @submit="mailSubmit">
-          <span class="form-title">LEAVE US MASSAGE</span>
-          <h1 class="form-subtitle">How May We Help You!</h1>
-          <div class="block">
-            <label class="form-label">Name</label>
-            <input
-              type="text"
-              v-model="mailForm.name"
-              class="form-input"
-              placeholder="Full Name"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Email</label>
-            <input
-              type="text"
-              v-model="mailForm.email"
-              class="form-input"
-              placeholder="Email"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Subject</label>
-            <input
-              type="text"
-              v-model="mailForm.subject"
-              class="form-input"
-              placeholder="Subject"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Message</label>
-            <textarea
-              v-model="mailForm.message"
-              class="form-textarea"
-              placeholder="Write A Message"
-            >
-            </textarea>
-          </div>
-          <div class="w-full py-2 block">
-            <button class="form-button" type="submit">Send Message</button>
-          </div>
-        </form>
+       <ContactForm :formInput="formInput" :formTextarea="formTextarea" :buttonClass="buttonClass" title="LEAVE US MASSAGE" subtitle="How May We Help You!"/>
       </div>
     </div>
     <!-- contact block end -->
@@ -233,22 +162,20 @@ import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import ProductCard from "@/components/card/ProductCard";
 import VideoPlayer from "@/components/videobox/VideoPlayer";
+import HeadingTitle from "@/components/main/HeadingTitle.vue";
+import ContactInformation from "@/components/main/ContactInformation.vue";
+import ContactForm from '@/components/form/ContactForm'
 // import { introduce,information,cardView } from '../jsonStore/store';
 
 export default {
   name: "Home",
-
   data() {
     return {
+     buttonClass: 'form-button',
+     formInput:'form-input',
+     formTextarea:'form-textarea',
       show: false,
       youtubeVideoUrl: "https://www.youtube.com/embed/Wy9q22isx3U",
-      mailForm: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      },
-
       introduce: [
         {
           id: 1,
@@ -421,6 +348,9 @@ export default {
     PartnerSwiper,
     ProductCard,
     VideoPlayer,
+    HeadingTitle,
+    ContactInformation,
+    ContactForm
   },
 
   mounted() {

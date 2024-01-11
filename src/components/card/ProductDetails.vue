@@ -32,6 +32,7 @@ export default {
     };
   },
   mounted() {
+    window.scrollTo(0, 0);
     const productId = this.$route.params.id;
     const storedProduct = this.$route.query.data;
 

@@ -126,10 +126,7 @@
 
     <!-- testimonial part -->
     <div class="px-0 section">
-      <span class="section-title user-select-none"> TESTIMONIAL </span>
-      <p class="section-subtitle user-select-none">
-        20k+ satisfied clients worldwide
-      </p>
+      <HeadingTitle title="TESTIMONIAL" subtitle="20k+ satisfied clients worldwide" />
       <div class="testemonial-swiper">
         <SwiperView />
       </div>
@@ -144,6 +141,7 @@
 <script>
 import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
+import HeadingTitle from "@/components/main/HeadingTitle.vue";
 
 export default {
   data() {
@@ -264,6 +262,7 @@ export default {
   components: {
     SwiperView,
     PartnerSwiper,
+    HeadingTitle
   },
 
   mounted(){

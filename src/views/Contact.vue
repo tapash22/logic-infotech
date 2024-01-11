@@ -6,85 +6,32 @@
       </p>
     </div>
     <div class="section">
-      <div class="grid grid-cols-3 gap-5 py-2 px-5">
-        <div
-          class="block px-3 py-3 bg-gray-200 rounded-lg"
-          v-for="addl in addressLink"
-          :key="addl.id"
-        >
-          <div class="flex justify-center py-1">
-            <i
-              :class="addl.icon"
-              class="text-5xl font-bold text-indigo-950"
-            ></i>
-          </div>
-          <div class="block py-2 px-2">
-            <p class="text-2xl font-bold flex justify-center py-2">
-              {{ addl.title }}
-            </p>
-            <p
-              class="text-lg font-semibold flex justify-center tracking-wide py-2"
-            >
-              {{ addl.name }}
-            </p>
-          </div>
-        </div>
-      </div>
+      <ContactBlock :addressLink="addressLink" />
     </div>
     <div class="section flex justify-center items-center">
       <div class="message-section bg-white shadow-lg shadow-gray-300">
-        <form class="submit-form" @submit="mailSubmit">
-          <span class="form-title">LEAVE US MASSAGE</span>
-          <h1 class="form-subtitle">How May We Help You!</h1>
-          <div class="block">
-            <label class="form-label">Name</label>
-            <input
-              type="text"
-              v-model="mailForm.name"
-              class="form-input ring-1 ring-gray-300"
-              placeholder="Full Name"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Email</label>
-            <input
-              type="text"
-              v-model="mailForm.email"
-              class="form-input ring-1 ring-gray-300"
-              placeholder="Email"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Subject</label>
-            <input
-              type="text"
-              v-model="mailForm.subject"
-              class="form-input ring-1 ring-gray-300"
-              placeholder="Subject"
-            />
-          </div>
-          <div class="block">
-            <label class="form-label">Message</label>
-            <textarea
-              v-model="mailForm.message"
-              class="form-textarea ring-1 ring-gray-300"
-              placeholder="Write A Message"
-            >
-            </textarea>
-          </div>
-          <div class="w-full py-2 block">
-            <button class="form-button bg-indigo-700" type="submit">Send Message</button>
-          </div>
-        </form>
+        <ContactForm
+          :formInput="formInput"
+          :formTextarea="formTextarea"
+          :buttonClass="buttonClass"
+          title="LEAVE US MASSAGE"
+          subtitle="How May We Help You!"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ContactForm from "@/components/form/ContactForm";
+import ContactBlock from "@/components/card/ContactBlock";
+
 export default {
   data() {
     return {
+      buttonClass: "form-button1",
+      formInput: "form-input-gray",
+      formTextarea: "form-textarea-gray",
       mailForm: {
         name: "",
         email: "",
@@ -115,9 +62,14 @@ export default {
     };
   },
 
-  mounted(){
-        window.scrollTo(0,0)
-    },
+  components: {
+    ContactForm,
+    ContactBlock,
+  },
+
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 
   methods: {
     mailSubmit(e) {

@@ -4,23 +4,7 @@
       <p class="page-heading">Services</p>
     </div>
     <div class="section">
-      <div class="grid grid-cols-4 gap-4 py-5 px-5">
-        <div
-          v-for="ours in ourServices"
-          :key="ours.id"
-          class="bg-white py-3 rounded-lg px-4 shadow-lg shadow-gray-500"
-        >
-          <div class="product-icon-block py-3">
-            <img :src="ours.image" />
-          </div>
-          <p class="product-type">
-            {{ ours.title }}
-          </p>
-          <p class="product-details leading-7">
-            {{ ours.details }}
-          </p>
-        </div>
-      </div>
+      <ServiceBlock :ourServices="ourServices" />
     </div>
 
     <!-- contact information -->
@@ -54,10 +38,7 @@
 
     <!-- testimonial part -->
     <div class="section px-0">
-      <span class="section-title user-select-none"> TESTIMONIAL </span>
-      <p class="section-subtitle user-select-none">
-        20k+ satisfied clients worldwide
-      </p>
+      <HeadingTitle title="TESTIMONIAL" subtitle="20k+ satisfied clients worldwide" />
       <div class="testemonial-swiper">
         <SwiperView />
       </div>
@@ -73,6 +54,8 @@
 <script>
 import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
+import ServiceBlock from "@/components/card/ServiceBlock.vue";
+import HeadingTitle from '@/components/main/HeadingTitle'
 
 export default {
   data() {
@@ -140,7 +123,9 @@ export default {
 
   components:{
     SwiperView,
-    PartnerSwiper
+    PartnerSwiper,
+    ServiceBlock,
+    HeadingTitle
   },
 
   mounted() {
