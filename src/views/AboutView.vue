@@ -1,6 +1,6 @@
 <template>
   <div class="home -mt-10">
-    <div class="home-header home-banner"></div>
+    <HeaderImage title="About"  :backgroundImage="backgroundImage"/>
     <!-- intro part -->
     <div class="flex px-5 section">
       <div class="intro-block">
@@ -142,10 +142,12 @@
 import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import HeadingTitle from "@/components/main/HeadingTitle.vue";
+import HeaderImage from "@/components/main/HeaderImage.vue";
 
 export default {
   data() {
     return {
+      backgroundImage:'home-header',
       introduce: [
         {
           id: 1,
@@ -262,7 +264,8 @@ export default {
   components: {
     SwiperView,
     PartnerSwiper,
-    HeadingTitle
+    HeadingTitle,
+    HeaderImage
   },
 
   mounted(){
@@ -274,10 +277,7 @@ export default {
 
 <style scoped>
 .home-header {
-  /* background-image: url("../assets/images/hero2-bg.jpg"); */
   background-image: url("../assets/images/2.jpg");
-  /* background-image: url("../assets/images/2.jpg"); */
-  /* background-image: url("../assets/images/3.jpg"); */
   background-size: cover;
   height: 100vh;
   object-fit: cover;
@@ -285,9 +285,6 @@ export default {
 }
 
 .background-image {
-  /* background-image: url("../assets/images/hero2-bg.jpg"); */
-  /* background-image: url("../assets/images/2.jpg"); */
-  /* background-image: url("../assets/images/2.jpg"); */
   background-image: url("../assets/images/3.jpg");
   background-size: cover;
   height: 80vh;

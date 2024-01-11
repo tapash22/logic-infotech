@@ -1,8 +1,6 @@
 <template>
   <div class="home -mt-10">
-    <div class="home-header home-banner">
-      <p class="page-heading">Services</p>
-    </div>
+    <HeaderImage title="Services"  :backgroundImage="backgroundImage"/>
     <div class="section relative">
       <ServiceBlock :ourServices="ourServices" @serviceView="serviceView" />
       <div
@@ -27,9 +25,21 @@
             Aperiam voluptate maxime minus, et aut magnam expedita qui. Tempore,
             cupiditate atque!
           </p>
+          <router-link to="/contact" class=" flex justify-start gap-2 py-3 cursor-pointer">
+            <span class="text-lg font-bold text-indigo-950 tracking-wide underline underline-offset-4">Contact with us</span> 
+          </router-link>
+          <div class=" block">
+            <ul class="list-none flex gap-2">
+              <li v-for="sl in socialLinks" :key="sl.id" class="w-10 h-10 rounded-full bg-indigo-950 opacity-80 hover:opacity-100 transition-all delay-100 flex justify-center items-center">
+                <a :href="sl.link" class="no-underline">
+                  <i :class="sl.icon" class="text-2xl font-sm text-white"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="absolute" >
-          <i class="fa fa-times font-normal text-2xl text-red-500" @click="closeView"></i>
+        <div class=" flex justify-center items-center -mt-2 -ml-5 w-10 h-10 rounded-full bg-white ring-2 ring-gray-400 cursor-pointer" >
+          <i class="fa fa-times fa-1x font-normal text-2xl text-gray-500" @click="closeView"></i>
         </div>
       </div>
     </div>
@@ -89,10 +99,12 @@ import SwiperView from "@/components/swiper/SwiperView.vue";
 import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import ServiceBlock from "@/components/card/ServiceBlock.vue";
 import HeadingTitle from "@/components/main/HeadingTitle";
+import HeaderImage from "@/components/main/HeaderImage.vue";
 
 export default {
   data() {
     return {
+      backgroundImage:'home-header',
       show: false,
       service: {},
       ourServices: [
@@ -153,6 +165,23 @@ export default {
             "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
         },
       ],
+      socialLinks: [
+        {
+          id: 1,
+          icon: "fa fa-facebook-square",
+          link: "#",
+        },
+        {
+          id: 2,
+          icon: "fa fa-linkedin",
+          link: "#",
+        },
+        {
+          id: 3,
+          icon: "fa fa-instagram",
+          link: "#",
+        },
+      ],
     };
   },
 
@@ -172,6 +201,7 @@ export default {
     PartnerSwiper,
     ServiceBlock,
     HeadingTitle,
+    HeaderImage
   },
 
   mounted() {
@@ -182,10 +212,7 @@ export default {
 
 <style scoped>
 .home-header {
-  /* background-image: url("../assets/images/hero2-bg.jpg"); */
   background-image: url("../assets/images/about.jpg");
-  /* background-image: url("../assets/images/2.jpg"); */
-  /* background-image: url("../assets/images/3.jpg"); */
   background-size: cover;
   height: 100vh;
   object-fit: cover;

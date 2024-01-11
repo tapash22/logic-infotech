@@ -1,10 +1,11 @@
 <template>
   <div class="home -mt-10">
-    <div class="home-header home-banner">
+    <HeaderImage title="Contact us"  :backgroundImage="backgroundImage"/>
+    <!-- <div class="home-header home-banner">
       <p class="text-5xl font-bold text-white flex justify-center w-full">
         Contact us
       </p>
-    </div>
+    </div> -->
     <div class="section">
       <ContactBlock :addressLink="addressLink" />
     </div>
@@ -25,10 +26,12 @@
 <script>
 import ContactForm from "@/components/form/ContactForm";
 import ContactBlock from "@/components/card/ContactBlock";
+import HeaderImage from "@/components/main/HeaderImage.vue";
 
 export default {
   data() {
     return {
+      backgroundImage:'home-header',
       buttonClass: "form-button1",
       formInput: "form-input-gray",
       formTextarea: "form-textarea-gray",
@@ -65,6 +68,7 @@ export default {
   components: {
     ContactForm,
     ContactBlock,
+    HeaderImage
   },
 
   mounted() {

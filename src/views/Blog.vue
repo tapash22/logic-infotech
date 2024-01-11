@@ -1,10 +1,6 @@
 <template>
   <div class="home -mt-10">
-    <div class="home-header home-banner">
-      <p class="page-heading">
-        Blog
-      </p>
-    </div>
+    <HeaderImage title="Blog"  :backgroundImage="backgroundImage"/>
     <div class="section">
       <BlogCard :blogList="blogList" />
     </div>
@@ -13,10 +9,12 @@
 
 <script>
 import BlogCard from '@/components/card/BlogCard.vue';
+import HeaderImage from '@/components/main/HeaderImage.vue';
 
 export default {
   data() {
     return {
+      backgroundImage:'home-header',
       blogList: [
         {
           id: 1,
@@ -204,7 +202,8 @@ export default {
   },
 
   components: {
-    BlogCard
+    BlogCard,
+    HeaderImage
   },
 
   mounted() {
@@ -215,10 +214,7 @@ export default {
 
 <style scoped>
 .home-header {
-  /* background-image: url("../assets/images/hero2-bg.jpg"); */
   background-image: url("../assets/images/about.jpg");
-  /* background-image: url("../assets/images/2.jpg"); */
-  /* background-image: url("../assets/images/3.jpg"); */
   background-size: cover;
   height: 100vh;
   object-fit: cover;
