@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <!-- <Slider /> -->
     <HomeBanner
       :title="bannerTitle"
       :subtitle="bannerSubtitle"
       :button="bannerButton"
+      @showView="showView"
     />
     <!-- intro part -->
     <div class="flex px-5 section">
@@ -25,7 +25,6 @@
         title="WHAT WE PROVIDE"
         subtitle="We provide truly prominent Software solutions"
       />
-
       <ProductCard :cardView="cardView" />
     </div>
     <!-- product list end -->
@@ -151,15 +150,11 @@ export default {
 
     showView() {
       this.show = true;
-      console.log("click action");
     },
     hideView() {
-      (this.show = false), console.log("hide view");
+      this.show = false;
     },
   },
 };
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-</style>

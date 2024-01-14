@@ -434,6 +434,7 @@ export const extraLink = [
     link: "#",
   },
 ];
+
 export const extraServices = [
   {
     id: 1,
@@ -456,6 +457,7 @@ export const extraServices = [
     link: "#",
   },
 ];
+
 export const addressLink1 = [
   {
     id: 1,
@@ -685,7 +687,7 @@ export const partners = [
   },
 ];
 
-export const Clienttestemonial =[
+export const Clienttestemonial = [
   {
     id:1,
     image:require('../assets/images/hero2-bg.jpg'),

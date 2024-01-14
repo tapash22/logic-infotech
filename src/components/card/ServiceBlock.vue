@@ -1,9 +1,9 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 py-5 px-5 overflow-hidden">
+  <div class="service-wrapper">
     <div
       v-for="ours in ourServices"
       :key="ours.id"
-      class="bg-white py-3 rounded-lg px-4 shadow-lg shadow-gray-500"
+      class="service-wrapper-block"
     >
       <ServiceCard :ours="ours" @openBox="openBox" />
     </div>

@@ -20,6 +20,12 @@
 <script>
 export default {
   props: ["title", "subtitle", "button"],
+
+  methods:{
+    showView(){
+      this.$emit("showView");
+    }
+  }
 };
 </script>
 

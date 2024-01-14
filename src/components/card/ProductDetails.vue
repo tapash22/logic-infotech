@@ -7,7 +7,7 @@
       <p class="section-title user-select-none">
         {{ product.text }}
       </p>
-      <div class="grid grid-cols-3 gap-3 px-2 py-5">
+      <div class="product-details-block">
         <div v-for="pc in product.carddetails" :key="pc.id">
           <SingleCard :pc="pc" />
         </div>

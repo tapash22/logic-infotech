@@ -4,8 +4,8 @@
     <div class="section">
       <ContactBlock :addressLink="addressLink" />
     </div>
-    <div class="section flex justify-center items-center">
-      <div class="message-section bg-white shadow-lg shadow-gray-300">
+    <div class="section contact-form-wrapper">
+      <div class="message-section contact-form-block">
         <ContactForm
           :formInput="formInput"
           :formTextarea="formTextarea"
@@ -40,8 +40,6 @@ export default {
       addressLink:addressLink,
       title:"LEAVE US MASSAGE",
       subtitle:"How May We Help You!"
-
-
     };
   },
 

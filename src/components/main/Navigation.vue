@@ -12,7 +12,7 @@
         <li v-for="navL in navLinks" :key="navL.id">
           <router-link
             :to="navL.link"
-            class="navigation-block-list-link"
+            class="navigation-block-list-link text-white"
             :class="{
               'navigation-block-list-link-active': isNavLinkActive(navL.link),
             }"

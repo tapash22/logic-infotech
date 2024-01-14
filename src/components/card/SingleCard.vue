@@ -1,18 +1,18 @@
 <template>
-  <div   class="relative group bg-white px-2 py-2 block shadow-lg shadow-gray-300 rounded-lg w-full h-auto overflow-hidden transition-all duration-300 transform ">
-    <div class="overflow-hidden">
-        <img :src="pc.image" class="scale-100 hover:scale-110 transition-all" />
+  <div class="single-card-wrapper relative group">
+    <div class="single-card-image-block">
+        <img :src="pc.image" class="single-card-image-block-view" />
     </div>
     <div
-      class="hidden p-3 text-center transform translate-y-full bg-white group-hover:block group-hover:opacity-100 group-hover:translate-y-0"
+      class="single-card-details"
     >
       <router-link
         :to="pc.link"
-        class="text-lg font-bold tracking-wide text-black hover:text-indigo-950 uppercase py-2 flex justify-start"
+        class="single-card-details-link"
       >
         {{ pc.name }}
       </router-link>
-      <p class="font-normal text-sm tracking-normal text-justify">
+      <p class="single-card-details-text">
         {{ pc.message }}
       </p>
     </div>
