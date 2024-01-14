@@ -100,6 +100,7 @@ import PartnerSwiper from "@/components/swiper/PartnerSwiper.vue";
 import ServiceBlock from "@/components/card/ServiceBlock.vue";
 import HeadingTitle from "@/components/main/HeadingTitle";
 import HeaderImage from "@/components/main/HeaderImage.vue";
+import { ourServices,socialLinks } from "@/jsonStore/store";
 
 export default {
   data() {
@@ -107,81 +108,8 @@ export default {
       backgroundImage:'home-header',
       show: false,
       service: {},
-      ourServices: [
-        {
-          id: 1,
-          title: "IT Consultancy",
-          image: require("../assets/icon-image/1.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 2,
-          title: "Data Science",
-          image: require("../assets/icon-image/2.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 3,
-          title: "IT Security",
-          image: require("../assets/icon-image/3.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 4,
-          title: "blockchain System",
-          image: require("../assets/icon-image/4.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 5,
-          title: "IT Infrustructure",
-          image: require("../assets/icon-image/5.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 6,
-          title: "Data Managment",
-          image: require("../assets/icon-image/6.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 7,
-          title: "IT Managment",
-          image: require("../assets/icon-image/7.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-        {
-          id: 8,
-          title: "Data securet",
-          image: require("../assets/icon-image/8.png"),
-          details:
-            "Accelerate innovation with world-class tech teams We’ll match you to an entire.",
-        },
-      ],
-      socialLinks: [
-        {
-          id: 1,
-          icon: "fa fa-facebook-square",
-          link: "#",
-        },
-        {
-          id: 2,
-          icon: "fa fa-linkedin",
-          link: "#",
-        },
-        {
-          id: 3,
-          icon: "fa fa-instagram",
-          link: "#",
-        },
-      ],
+      ourServices: ourServices,
+      socialLinks:socialLinks
     };
   },
 

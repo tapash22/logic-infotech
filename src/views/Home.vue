@@ -1,5 +1,6 @@
 <template>
-  <div class="home -mt-10">
+  <div class="home ">
+    <!-- <Slider /> -->
     <div class="home-header home-banner">
       <div class="banner-block">
         <span class="home-banner-title user-select-none">
@@ -110,7 +111,8 @@ import HeadingTitle from "@/components/main/HeadingTitle.vue";
 import ContactInformation from "@/components/main/ContactInformation.vue";
 import ContactForm from '@/components/form/ContactForm'
 import IntroBlock from "@/components/card/IntroBlock.vue";
-// import { introduce,information,cardView } from '../jsonStore/store';
+// import Slider from "@/components/slider/Slider.vue"
+import { introduce1,information,cardView } from '../jsonStore/store';
 
 export default {
   name: "Home",
@@ -128,173 +130,9 @@ export default {
      formTextarea:'form-textarea',
       show: false,
       youtubeVideoUrl: "https://www.youtube.com/embed/Wy9q22isx3U",
-      introduce: [
-        {
-          id: 1,
-          name: "Expert Team",
-          icon:'fa fa-arrow-right',
-          details: "Accelerate innovation with world-class tech teams",
-        },
-        {
-          id: 2,
-          name: "Custom Code",
-          icon:'fa fa-arrow-right',
-          details: "Accelerate innovation with world-class tech teams",
-        },
-      ],
-
-      information: [
-        {
-          id: 1,
-          property: "Contact Number",
-          value: "+00(1) 123 456 7890",
-          icon: "fa fa-phone",
-        },
-        {
-          id: 2,
-          property: "Our Mail",
-          value: "info@logicinfotech.com",
-          icon: "fa fa-envelope-o ",
-        },
-        {
-          id: 3,
-          property: "Our Location",
-          value:
-            "House - 85, Road - 04, Block - B, Banani, Dhaka - 1213. Bangladesh",
-          icon: "fa fa-map-marker",
-        },
-      ],
-
-      cardView: [
-        {
-          id: 1,
-          name: "Web Development",
-          text: "Accelerate innovation with world-class tech teams We’ll match you to an entire remote team  match you to an entire remote team ",
-          icon: "fa fa-code",
-          carddetails: [
-            {
-              id: 1,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo1.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 2,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo2.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 3,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo1.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-          ],
-        },
-        {
-          id: 2,
-          name: "Mobile App Development",
-          text: "Accelerate innovation with world-class tech teams We’ll match you to an entire remote team  match you to an entire remote team ",
-          icon: "fa fa-gamepad",
-          carddetails: [
-            {
-              id: 1,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/erp.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 2,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/dms.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 3,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/erp.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-          ],
-        },
-        {
-          id: 3,
-          name: "Software Innovation",
-          text: "Accelerate innovation with world-class tech teams We’ll match you to an entire remote team  match you to an entire remote team ",
-          icon: "fa fa-rocket",
-          carddetails: [
-            {
-              id: 1,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo1.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 2,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo1.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 3,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/demo1.jpg"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-          ],
-        },
-        {
-          id: 4,
-          name: "App Management System",
-          text: "Accelerate innovation with world-class tech teams We’ll match you to an entire remote team  match you to an entire remote team",
-          icon: "fa fa-television",
-          carddetails: [
-            {
-              id: 1,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/erp.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 2,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/dms.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-            {
-              id: 3,
-              name: "Name of product",
-              link: "",
-              image: require("../assets/demo/erp.png"),
-              message:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis explicabo praesentium voluptate ipsam obcaecati placeat omnis facere eaque corporis? Iste eligendi omnis similique dolor suscipit maxime beatae quibusdam sed.",
-            },
-          ],
-        },
-      ],
+      introduce: introduce1,
+      information: information,
+      cardView: cardView
     };
   },
   components: {
@@ -305,7 +143,8 @@ export default {
     HeadingTitle,
     ContactInformation,
     ContactForm,
-    IntroBlock
+    IntroBlock,
+    // Slider
   },
 
   mounted() {

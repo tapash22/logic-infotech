@@ -28,9 +28,9 @@ export default {
       this.$emit("serviceView",this.serviceData);
     },
 
-    closeModel() {
-      this.show = falsa;
-    },
+    // closeModel() {
+    //   this.show = falsa;
+    // },
   },
 
   components: {

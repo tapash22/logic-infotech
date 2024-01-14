@@ -12,11 +12,11 @@
       <slide v-for="partner in partners" :key="partner.id">
         <div class="py-3">
           <div
-            class="w-full h-auto flex justify-center items-center  px-2 "
+            class="partner-image-block"
           >
             <img
               :src="partner.image"
-              class="ring-2 ring-indigo-900 rounded-lg w-44 shadow-lg border-2 border-indigo-900 shadow-indigo-950 p-2 scale-100 hover:scale-110 transition-all delay-150"
+              class="partner-image-block-view"
             />
           </div>
         </div>
@@ -27,52 +27,12 @@
   
   <script>
 import { Carousel, Slide } from "vue-carousel";
+import { partners } from "../../jsonStore/store";
 
 export default {
   data() {
     return {
-      partners: [
-        {
-          id: 1,
-          name: "partner",
-          image: require("../../assets/partner/du.png"),
-        },
-        {
-          id: 2,
-          name: "partner",
-          image: require("../../assets/partner/baf.png"),
-        },
-        {
-          id: 3,
-          name: "partner",
-          image: require("../../assets/partner/rab.png"),
-        },
-        {
-          id: 4,
-          name: "partner",
-          image: require("../../assets/partner/bkmea.jpg"),
-        },
-        {
-          id: 5,
-          name: "partner",
-          image: require("../../assets/partner/bkmea.jpg"),
-        },
-        {
-          id: 6,
-          name: "partner",
-          image: require("../../assets/partner/rab.png"),
-        },
-        {
-          id: 7,
-          name: "partner",
-          image: require("../../assets/partner/bkmea.jpg"),
-        },
-        {
-          id: 8,
-          name: "partner",
-          image: require("../../assets/partner/bkmea.jpg"),
-        },
-      ],
+      partners: partners
     };
   },
   components: {

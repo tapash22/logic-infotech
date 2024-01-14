@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
-    <div class="main">
       <router-view />
-    </div>
     <Footer />
   </div>
 </template>
@@ -25,11 +23,10 @@ export default {
 </script>
 
 <style scoped>
-.main{
+#app{
+  display: block;
   width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  /* background: white; */
+  height: 100%;
+  /* background: red; */
 }
 </style>

@@ -279,8 +279,8 @@ textarea:focus {
     @apply flex justify-center;
   }
 
-  .intro-block-bottom-card-first-icon{
-    @apply text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center
+  .intro-block-bottom-card-first-icon {
+    @apply text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center;
   }
   .intro-block-bottom-card-first-title {
     @apply tracking-wide text-black text-lg font-bold;
@@ -324,4 +324,68 @@ textarea:focus {
     @apply px-8 py-3;
   }
   /* about page end */
+
+  /* swiperView */
+  .swiper-wrapper {
+    @apply flex justify-center py-3 px-5 bg-transparent;
+  }
+  .swiper-block {
+    @apply flex bg-white relative rounded-lg shadow-xl shadow-gray-700;
+  }
+  .swiper-block-image {
+    @apply w-1/3 h-auto flex justify-start items-center;
+  }
+  .swiper-block-image-view {
+    @apply ring-2 ring-indigo-900 -ml-7 rounded-lg;
+  }
+  .swiper-block-details {
+    @apply w-2/3 px-3 py-5 block;
+  }
+  .swiper-block-details-icon {
+    @apply text-5xl text-indigo-900 px-2;
+  }
+
+  .swiper-block-details-message {
+    @apply text-lg font-medium tracking-wide py-2 px-2 text-black text-justify;
+  }
+
+  .swiper-block-details-client-name {
+    @apply text-sm font-medium py-1 px-2 text-black;
+  }
+  .swiper-block-details-client-designation {
+    @apply text-sm font-normal text-gray-600;
+  }
+  /* swiperView end */
+
+  /* partner-swiper */
+  .partner-image-block{
+@apply w-full h-auto flex justify-center items-center  px-2;
+  }
+  .partner-image-block-view{
+    @apply ring-1 ring-indigo-900 rounded-lg w-44 shadow-lg shadow-indigo-950 p-2 scale-100 hover:scale-110 transition-all delay-150;
+  }
+  /* partner-swiper end */
+
+  /* navigation */
+  .navigation-wrapper{
+    @apply px-16 py-0 flex justify-center w-full shadow-xl shadow-blue-900 z-50
+  }
+  .navigation-image-block{
+    @apply w-1/4 flex justify-start py-3
+  }
+  /* .navigation-image-block-view{
+    @apply 
+  } */
+
+  .navigation-block-list{
+    @apply w-3/4 flex justify-end items-center list-none gap-4;
+  }
+
+  .navigation-block-list-link{
+    @apply text-sm font-bold tracking-wide text-white
+  }
+  .navigation-block-list-link-active{
+    @apply border-b-2 border-white pb-1;
+  }
+  /* navigation end */
 }

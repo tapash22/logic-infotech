@@ -3,17 +3,19 @@
     <!-- <div class="nav-placeholder"></div> -->
     <div
       :class="isFixed ? 'fixed-nav yellow-background' : 'navigation '"
-      class="px-16 py-0 flex justify-center w-full shadow-xl shadow-blue-900 z-50"
+      class="navigation-wrapper"
     >
-      <div class="w-1/4 flex justify-start py-3">
-        <img src="../../assets/logo/logic-info.png" />
+      <div class="navigation-image-block">
+        <img src="../../assets/logo/logic-info.png" class="navigation-image-block-view" />
       </div>
-      <ul class="w-3/4 flex justify-end items-center list-none gap-4">
+      <ul class="navigation-block-list">
         <li v-for="navL in navLinks" :key="navL.id">
           <router-link
             :to="navL.link"
-            class="text-sm font-bold tracking-wide text-white"
-            :class="{ 'border-b-2 border-white pb-1': isNavLinkActive(navL.link) }"
+            class="navigation-block-list-link"
+            :class="{
+              'navigation-block-list-link-active': isNavLinkActive(navL.link),
+            }"
           >
             {{ navL.name }}
           </router-link>
@@ -24,39 +26,14 @@
 </template>
   
   <script>
+import { navLinks } from "../../jsonStore/store";
+
 export default {
   data() {
     return {
-      // currentRoute: null,
       isFixed: false,
       isYellowBackground: false,
-      navLinks: [
-        {
-          id: 1,
-          name: "Home",
-          link: "/",
-        },
-        {
-          id: 2,
-          name: "About",
-          link: "/about",
-        },
-        {
-          id: 3,
-          name: "Services",
-          link: "/services",
-        },
-        {
-          id: 4,
-          name: "Blog",
-          link: "/blogs",
-        },
-        {
-          id: 5,
-          name: "Contact",
-          link: "/contact",
-        },
-      ],
+      navLinks: navLinks,
     };
   },
 

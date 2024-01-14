@@ -59,88 +59,20 @@
 <script>
 import FooterList from "@/components/footerpart/FooterList";
 import FooterInfo from "@/components/footerpart/FooterInfo";
+import {
+  socialLinks,
+  addressLink1,
+  extraServices,
+  extraLink,
+} from "../../jsonStore/store";
 
 export default {
   data() {
     return {
-      extraLink: [
-        {
-          id: 1,
-          name: "Terms & Conditions",
-          link: "#",
-        },
-        {
-          id: 2,
-          name: "About Company",
-          link: "#",
-        },
-        {
-          id: 3,
-          name: "Payment Gatway",
-          link: "#",
-        },
-        {
-          id: 4,
-          name: "Privacy & Policy",
-          link: "#",
-        },
-      ],
-      extraServices: [
-        {
-          id: 1,
-          name: "Data Security",
-          link: "#",
-        },
-        {
-          id: 2,
-          name: "IT Managment",
-          link: "#",
-        },
-        {
-          id: 3,
-          name: "Outsourcing",
-          link: "#",
-        },
-        {
-          id: 4,
-          name: "Networking",
-          link: "#",
-        },
-      ],
-      addressLink: [
-        {
-          id: 1,
-          name: "+8801600000000",
-          icon: "",
-        },
-        {
-          id: 2,
-          name: "info@example.com",
-          icon: "",
-        },
-        {
-          id: 3,
-          name: "Road:04,Banani,Dhaka",
-          icon: "",
-        },
-      ],
-      socialLinks: [
-        {
-          id: 1,
-          icon: "fa fa-facebook-square",
-          link: "#",
-        },
-        {
-          id: 2,
-          icon: "fa fa-linkedin",
-          link: "#",
-        },
-        {
-          id: 3,
-          icon: "fa fa-instagram",
-          link: "#",
-        },
-      ],
+      extraLink: extraLink,
+      extraServices: extraServices,
+      addressLink: addressLink1,
+      socialLinks: socialLinks,
     };
   },
   components: {
