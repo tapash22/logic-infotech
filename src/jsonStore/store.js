@@ -242,7 +242,7 @@ export const blogList = [
   },
   {
     id: 3,
-    title: "Easy and Most Powerful Server and Platform.",
+    title: "Easy and Most Powerful Server",
     image: require("../assets/blog/3.jpg"),
     date: "2022-01-15",
     infoList: [
@@ -299,7 +299,7 @@ export const blogList = [
   },
   {
     id: 6,
-    title: "Easy and Most Powerful Server and Platform.",
+    title: "Easy and Most Powerful Server",
     image: require("../assets/blog/3.jpg"),
     date: "2022-01-15",
     infoList: [
@@ -318,7 +318,7 @@ export const blogList = [
   },
   {
     id: 7,
-    title: "Easy and Most Powerful Server and Platform.",
+    title: "Easy and Most Powerful Server.",
     image: require("../assets/blog/3.jpg"),
     date: "2022-01-15",
     infoList: [
