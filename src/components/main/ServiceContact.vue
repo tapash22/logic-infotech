@@ -1,6 +1,6 @@
 <template>
      <div class="service-contact-wrapper-block">
-          <div class="">
+          <div class="service-contact-wrapper-title-block">
             <h1
               class="user-select-none service-contact-wrapper-title-block-view"
             >

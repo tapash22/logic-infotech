@@ -11,7 +11,6 @@
     <div class="section px-12">
       <div class="service-cover">
         <ServiceContact :tag="tag" :title="title" :contact="contact" />
-        
       </div>
     </div>
     <!-- contact information end -->
@@ -88,6 +87,8 @@ export default {
 .home-header {
   background-image: url("../assets/images/about.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

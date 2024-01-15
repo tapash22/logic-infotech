@@ -66,6 +66,8 @@ export default {
 .home-header {
   background-image: url("../assets/images/about.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

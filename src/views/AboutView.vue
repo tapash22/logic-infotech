@@ -2,7 +2,7 @@
   <div class="home -mt-10">
     <HeaderImage title="About" :backgroundImage="backgroundImage" />
     <!-- intro part -->
-    <div class="flex px-5 section">
+    <div class="intro-wrapper section">
       <div class="intro-block">
         <div class="intro-block-left">
           <div class="">
@@ -88,7 +88,7 @@ import image2 from "@/assets/images/about1.jpg";
 export default {
   data() {
     return {
-      textColor: 'red',
+      textColor: "red",
       ourSolution: ourSolution,
       ourTeams: ourTeams,
       introduce: introduce,
@@ -136,6 +136,8 @@ export default {
 .home-header {
   background-image: url("../assets/images/2.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

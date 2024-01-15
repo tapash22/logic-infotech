@@ -3,7 +3,7 @@
     <div
       v-for="blogL in blogList"
       :key="blogL.id"
-      class="relative w-full h-auto group my-10"
+      class="relative group blog-content-view"
     >
       <div class="blog-part-image-block">
         <img :src="blogL.image" class="blog-card-image" />

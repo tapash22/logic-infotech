@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <carousel :autoplay="true">
+  <div >
+    <carousel :autoplay="true" >
       <slide
         v-for="clientT in Clienttestemonial"
         :key="clientT.id"
@@ -9,6 +9,7 @@
         :space-padding="0"
         class="py-3"
         :paginationPadding="5"
+
       >
         <div class="swiper-wrapper">
           <div class="swiper-block">
@@ -42,7 +43,20 @@ export default {
   data() {
     return {
       Clienttestemonial: Clienttestemonial,
+     
     };
+  },
+  computed: {
+    computedPerPage() {
+      if (window.innerWidth < 480) {
+        return 1; // For smaller screens, show 1 item per page
+      } else if (window.innerWidth < 780) {
+        return 1; // For medium screens, show 2 items per page
+      } else {
+        return 2; // For larger screens, adjust as needed
+      }
+    },
+  
   },
 
   components: {

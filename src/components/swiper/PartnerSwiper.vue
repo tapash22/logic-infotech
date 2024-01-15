@@ -1,50 +1,53 @@
 <template>
-  <div>
-    <carousel
-      :autoplay="true"
-      :show-pagination="true"
-      :per-page="6"
-      :loop="true"
-      :interval="100"
-      :pagination-class="'custom-pagination'"
-      :pagination-active-class="'custom-pagination-active'"
-    >
-      <slide v-for="partner in partners" :key="partner.id">
-        <div class="py-3">
-          <div
-            class="partner-image-block"
-          >
-            <img
-              :src="partner.image"
-              class="partner-image-block-view"
-            />
-          </div>
-        </div>
-      </slide>
-    </carousel>
+  <div class="scrolling-container">
+    <div class="partners-list">
+    
+      <div v-for="partner in partners" :key="partner.id" class="partner-item">
+        <img :src="partner.image" class="partner-image" />
+      </div>
+    </div>
   </div>
 </template>
-  
-  <script>
-import { Carousel, Slide } from "vue-carousel";
+
+<script>
 import { partners } from "../../jsonStore/store";
 
 export default {
   data() {
     return {
-      partners: partners
+      partners: partners,
     };
-  },
-  components: {
-    Carousel,
-    Slide,
   },
 };
 </script>
-  
-<style >
-.VueCarousel-dot {
-  visibility: hidden;
+
+<style scoped>
+.scrolling-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.partners-list {
+  display: flex;
+  animation: scrollAnimation 20s linear infinite; 
+  animation-delay: -10s; 
+}
+
+.partner-item {
+  margin-right: 10px; 
+}
+
+.partner-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
 }
 </style>
-  

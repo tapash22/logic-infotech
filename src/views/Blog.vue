@@ -1,7 +1,7 @@
 <template>
   <div class="home -mt-10">
     <HeaderImage title="Blog"  :backgroundImage="backgroundImage"/>
-    <div class="section px-5">
+    <div class="section blog-content-wrapper">
       <BlogCard :blogList="blogList" />
     </div>
   </div>
@@ -35,6 +35,8 @@ export default {
 .home-header {
   background-image: url("../assets/images/about.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;

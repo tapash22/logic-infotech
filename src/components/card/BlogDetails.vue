@@ -12,11 +12,13 @@
           <img :src="blog.image" class="" />
         </div>
         <div class="blog-details-wrapper-info-block">
-          <p class=".blog-details-wrapper-info-block-publish">
+          <p class="blog-details-wrapper-info-block-publish">
             <span class="blog-details-wrapper-info-block-publish-view"
               >Publish Date:
             </span>
-            {{ blog.date }}
+            <span class="blog-details-wrapper-info-block-publish-view-date">
+              {{ blog.date }}
+            </span>
           </p>
           <p class="blog-details-wrapper-info-block-publish-text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
