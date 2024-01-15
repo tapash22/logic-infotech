@@ -11,16 +11,16 @@
     </p>
 
     <div
-      class="px-3 py-5 bg-gray-300 rounded-lg flex justify-center my-4"
+      class="introbox-wrapper"
       v-if="introBox"
     >
       <i
         :class="introBox.icon"
-        class="text-3xl font-bold text-indigo-950 px-2 flex items-center"
+        class="introbox-wrapper-icon"
         aria-hidden="true"
       ></i>
       <p
-        class="text-lg font-bold px-2 tracking-wide text-center text-indigo-950"
+        class="introbox-wrapper-details"
       >
         {{ introBox.details }}
       </p>

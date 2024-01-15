@@ -68,12 +68,12 @@ textarea:focus {
   }
 
   /* service blog */
-.service-wrapper{
-  @apply grid grid-cols-4 gap-4 py-5 px-8 overflow-hidden;
-}
-.service-wrapper-block{
-  @apply bg-white py-3 rounded-lg px-4 shadow-lg shadow-gray-500;
-}
+  .service-wrapper {
+    @apply grid grid-cols-4 gap-4 py-5 px-8 overflow-hidden;
+  }
+  .service-wrapper-block {
+    @apply bg-white py-3 rounded-lg px-4 shadow-lg shadow-gray-500;
+  }
   /* service blog end */
 
   /* service card */
@@ -93,15 +93,14 @@ textarea:focus {
     @apply text-sm font-medium py-3 px-1 tracking-normal text-black text-justify;
   }
 
-  .product-button-block{
-    @apply flex justify-start px-2 py-2
+  .product-button-block {
+    @apply flex justify-start px-2 py-2;
   }
-  .product-button-block-view{
+  .product-button-block-view {
     @apply px-4 py-2 rounded-lg text-sm font-bold tracking-wide text-white bg-indigo-950 opacity-80 hover:opacity-100 transition-all delay-150;
   }
 
   /* service card end */
-  
 
   /* footer */
   .footer-wrapper {
@@ -245,38 +244,6 @@ textarea:focus {
     @apply object-cover w-full h-[450px] rounded-lg -mt-10;
   }
 
-  .intro-block-right {
-    @apply w-1/2 h-auto pr-32 block;
-  }
-  .intro-block-right-title {
-    @apply text-sm font-normal tracking-wide flex justify-start;
-  }
-  .intro-block-right-subtitle {
-    @apply text-5xl font-bold tracking-normal py-3 flex justify-center leading-none;
-  }
-  .intro-block-right-text {
-    @apply text-sm font-medium tracking-normal text-justify break-words leading-7 py-2;
-  }
-  .intro-block-bottom {
-    @apply w-full my-3 px-2 flex justify-between gap-2;
-  }
-  .intro-block-bottom-card {
-    @apply block bg-gray-200 rounded-lg py-3 px-3;
-  }
-  .intro-block-bottom-card-first {
-    @apply flex justify-center;
-  }
-
-  .intro-block-bottom-card-first-icon {
-    @apply text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center;
-  }
-  .intro-block-bottom-card-first-title {
-    @apply tracking-wide text-black text-lg font-bold;
-  }
-  .intro-block-bottom-card-first-details {
-    @apply text-sm font-normal text-indigo-950 flex justify-center text-justify py-2;
-  }
-
   .intro-block-product {
     @apply grid grid-cols-4 gap-4 py-4 px-10;
   }
@@ -399,27 +366,6 @@ textarea:focus {
   }
   /* home popup end */
 
-  /* introblock */
-  .intro-block-wrapper {
-    @apply w-1/2 h-auto flex justify-center items-end;
-  }
-  .intro-block-wrapper-details {
-    @apply w-full h-2/3 px-2 relative bg-gray-300 opacity-90 rounded-xl;
-  }
-  .intro-block-wrapper-details-image-first {
-    @apply absolute right-0 bottom-4;
-  }
-  .intro-block-wrapper-details-image-first-view {
-    @apply object-cover w-full h-full rounded-lg;
-  }
-  .intro-block-wrapper-details-image-second {
-    @apply absolute bottom-0 -left-4;
-  }
-  .intro-block-wrapper-details-image-second-view {
-    @apply object-cover w-full h-auto rounded-lg;
-  }
-  /* introblock end */
-
   /* contact */
   .contact-wrapper {
     @apply grid grid-cols-3 gap-5 py-2 px-5;
@@ -501,33 +447,33 @@ textarea:focus {
   /* form end */
 
   /* service contact information */
-  .service-contact-wrapper{
-@apply flex justify-start px-5 rounded-lg;
+  .service-contact-wrapper {
+    @apply flex justify-start px-5 rounded-lg;
   }
 
-  .service-contact-wrapper-block{
+  .service-contact-wrapper-block {
     @apply flex justify-between items-center px-5 py-10;
   }
 
-  .service-contact-wrapper-title-block{
+  .service-contact-wrapper-title-block {
     @apply w-1/2 flex justify-start;
   }
-  .service-contact-wrapper-title-block-view{
-    @apply font-bold tracking-wide flex justify-start px-2 py-3 text-4xl border-l-4 border-white text-white mr-36 mb-5 ;
+  .service-contact-wrapper-title-block-view {
+    @apply font-bold tracking-wide flex justify-start px-2 py-3 text-4xl border-l-4 border-white text-white mr-36 mb-5;
   }
 
-  .service-contact-wrapper-block-details{
+  .service-contact-wrapper-block-details {
     @apply block w-1/2;
   }
-  .service-contact-wrapper-block-details-image-block{
+  .service-contact-wrapper-block-details-image-block {
     @apply flex justify-center items-center;
   }
 
-  .service-contact-wrapper-block-details-text{
-    @apply text-sm font-normal py-2 flex justify-center text-white
+  .service-contact-wrapper-block-details-text {
+    @apply text-sm font-normal py-2 flex justify-center text-white;
   }
 
-  .service-contact-wrapper-block-details-contact{
+  .service-contact-wrapper-block-details-contact {
     @apply text-3xl font-bold py-2 flex justify-center text-white;
   }
 
@@ -538,29 +484,126 @@ textarea:focus {
   /* service contact information end */
 
   /* single card */
-.single-card-wrapper{
-  @apply  bg-white px-2 py-2 block shadow-lg shadow-gray-300 rounded-lg w-full h-auto overflow-hidden transition-all duration-300 transform ;
-}
+  .single-card-wrapper {
+    @apply bg-white px-2 py-2 block shadow-lg shadow-gray-300 rounded-lg w-full h-auto overflow-hidden transition-all duration-300 transform;
+  }
 
-.single-card-image-block{
-  @apply overflow-hidden;
-}
-.single-card-image-block-view{
-  @apply scale-100 hover:scale-110 transition-all
-}
-.single-card-details{
-  @apply hidden p-3 text-center transform translate-y-full bg-white group-hover:block group-hover:opacity-100 group-hover:translate-y-0;
-}
-.single-card-details-link{
-  @apply text-lg font-bold tracking-wide text-black hover:text-indigo-950 uppercase py-2 flex justify-start;
-}
-.single-card-details-text{
-  @apply font-normal text-sm tracking-normal text-justify;
-}
+  .single-card-image-block {
+    @apply overflow-hidden;
+  }
+  .single-card-image-block-view {
+    @apply scale-100 hover:scale-110 transition-all;
+  }
+  .single-card-details {
+    @apply hidden p-3 text-center transform translate-y-full bg-white group-hover:block group-hover:opacity-100 group-hover:translate-y-0;
+  }
+  .single-card-details-link {
+    @apply text-lg font-bold tracking-wide text-black hover:text-indigo-950 uppercase py-2 flex justify-start;
+  }
+  .single-card-details-text {
+    @apply font-normal text-sm tracking-normal text-justify;
+  }
   /* single card end */
 
   /* product details */
-  .product-details-block{
+  .product-details-block {
     @apply grid grid-cols-3 gap-3 px-2 py-5;
   }
+
+  /* intro block */
+
+  .intro-block-right {
+    @apply w-1/2 h-auto pr-32 block;
+  }
+  .intro-block-right-title {
+    @apply text-sm font-normal tracking-wide flex justify-start;
+  }
+  .intro-block-right-subtitle {
+    @apply text-5xl font-bold tracking-normal py-3 flex justify-center leading-none;
+  }
+  .intro-block-right-text {
+    @apply text-sm font-medium tracking-normal text-justify break-words leading-7 py-2;
+  }
+  .intro-block-bottom {
+    @apply w-full my-3 px-2 flex justify-between gap-2;
+  }
+  .intro-block-bottom-card {
+    @apply block bg-gray-200 rounded-lg py-3 px-3;
+  }
+  .intro-block-bottom-card-first {
+    @apply flex justify-center;
+  }
+
+  .intro-block-bottom-card-first-icon {
+    @apply text-sm w-6 h-6 mx-1 bg-indigo-950 rounded-full text-white flex justify-center items-center;
+  }
+  .intro-block-bottom-card-first-title {
+    @apply tracking-wide text-black text-lg font-bold;
+  }
+  .intro-block-bottom-card-first-details {
+    @apply text-sm font-normal text-indigo-950 flex justify-center text-justify py-2;
+  }
+
+  .introbox-wrapper {
+    @apply px-3 py-10 bg-gray-300 rounded-lg flex justify-center my-4;
+  }
+
+  .introbox-wrapper-icon {
+    @apply text-3xl font-bold text-indigo-950 px-2 flex items-center;
+  }
+
+  .introbox-wrapper-details {
+    @apply text-lg font-bold px-2 tracking-wide text-center text-indigo-950;
+  }
+  /* intro block end */
+
+  /* introblock image */
+  .intro-block-wrapper {
+    @apply w-1/2 h-auto flex justify-center items-end;
+  }
+  .intro-block-wrapper-details {
+    @apply w-full h-2/3 px-2 relative bg-gray-300 opacity-90 rounded-xl;
+  }
+  .intro-block-wrapper-details-image-first {
+    @apply absolute right-0 bottom-4;
+  }
+  .intro-block-wrapper-details-image-first-view {
+    @apply object-cover w-full h-full rounded-lg;
+  }
+  .intro-block-wrapper-details-image-second {
+    @apply absolute bottom-0 -left-4;
+  }
+  .intro-block-wrapper-details-image-second-view {
+    @apply object-cover w-full h-auto rounded-lg;
+  }
+  /* introblock image end */
+
+  /* blog details */
+  .blog-details-wrapper{
+    @apply px-5 py-4;
+  }
+  .blog-details-wrapper-title{
+    @apply underline underline-offset-8;
+  }
+
+  .blog-details-wrapper-block{
+    @apply px-3 py-2 flex justify-between;
+  }
+  .blog-details-wrapper-block-image{
+    @apply flex justify-center items-center px-2 w-1/3;
+  }
+
+  .blog-details-wrapper-info-block{
+    @apply block px-2 py-2 w-2/3 h-auto;
+  }
+  .blog-details-wrapper-info-block-publish{
+    @apply text-sm font-bold;
+  }
+  .blog-details-wrapper-info-block-publish-view{
+    @apply text-lg font-bold tracking-wide px-1;
+  }
+  .blog-details-wrapper-info-block-publish-text{
+    @apply text-lg font-normal tracking-wide text-justify py-2;
+  }
+  /* blog details end */
 }
