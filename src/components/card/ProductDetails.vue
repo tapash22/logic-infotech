@@ -1,5 +1,5 @@
 <template>
-  <div class="home px-5 h-screen">
+  <div class="home product-details-wrapper">
     <div class="block px-5 section">
       <span class="section-subtitle user-select-none">
         {{ product.name }}

@@ -1,85 +1,60 @@
 <template>
   <div class="home -mt-10">
-    <HeaderImage title="About" :backgroundImage="backgroundImage"/>
+    <HeaderImage title="About" :backgroundImage="backgroundImage" />
     <!-- intro part -->
     <div class="flex px-5 section">
       <div class="intro-block">
         <div class="intro-block-left">
           <div class="">
-            <img
-              :src="aboutImage1"
-              class="intro-block-left-image"
-            />
+            <img :src="aboutImage1" class="intro-block-left-image" />
           </div>
           <div class="">
-            <img
-              :src="aboutImage2"
-              class="intro-block-left-image2"
-            />
+            <img :src="aboutImage2" class="intro-block-left-image2" />
           </div>
         </div>
       </div>
       <!-- <IntroBlockImage :aboutImage1="aboutImage1" :aboutImage2="aboutImage2" /> -->
-      <IntroBlock :title="title" :subtitle="subtitle" :introText="introText" :introduce="introduce"  />
+      <IntroBlock
+        :title="title"
+        :subtitle="subtitle"
+        :introText="introText"
+        :introduce="introduce"
+      />
     </div>
     <!-- intro part end -->
 
     <!-- product list -->
     <div class="section relative">
-      <span class="section-title user-select-none"> REASON TO CHOOSE US </span>
-      <p class="section-subtitle user-select-none">
-        We provide truly prominent IT solutions.
-      </p>
-      <SolutionBlock :ourSolution="ourSolution"  @solutionView="solutionView"/>
+      <HeadingTitle
+        title="REASON TO CHOOSE US"
+        subtitle="We provide truly prominent IT solutions."
+      />
+      <SolutionBlock :ourSolution="ourSolution" @solutionView="solutionView" />
 
-      <PopupModal v-if="show" :popupview="solution" :socialLinks="socialLinks" @closeView="closeView"/>
+      <PopupModal
+        v-if="show"
+        :popupview="solution"
+        :socialLinks="socialLinks"
+        @closeView="closeView"
+      />
     </div>
     <!-- product list end -->
 
     <div class="section background-image">
-      <span class="section-title text-white user-select-none">
-        OUR EXPERT TEAM
-      </span>
-      <p class="section-subtitle text-white user-select-none">
-        We have world expert team
-      </p>
-      <div class="team-expart-block">
-        <div
-          v-for="ourT in ourTeams"
-          :key="ourT.id"
-          class="relative w-full h-auto group"
-        >
-          <img :src="ourT.image" class="team-expart-block-image" />
-          <div
-            class="absolute top-2/4 left-0 right-0 bg-opacity-50 text-white p-2 group-hover:bg-opacity-100"
-          >
-            <div
-              class="team-expart-block-details"
-            >
-              <p class="team-expart-block-details-name">
-                {{ ourT.name }}
-              </p>
-              <p class="team-expart-block-details-designation">
-                {{ ourT.designation }}
-              </p>
-            </div>
-
-            <ul class="team-expart-block-details-ul">
-              <li v-for="social in ourT.social" :key="social">
-                <i
-                  :class="social"
-                  class="team-expart-block-details-ul-icon"
-                ></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <HeadingTitle
+        title="OUR EXPERT TEAM"
+        subtitle="We have world expert team"
+        :expartStyle="{ color: 'white' }"
+      />
+      <TeamExpartBlock :ourTeams="ourTeams" />
     </div>
 
     <!-- testimonial part -->
     <div class="px-0 section">
-      <HeadingTitle title="TESTIMONIAL" subtitle="20k+ satisfied clients worldwide" />
+      <HeadingTitle
+        title="TESTIMONIAL"
+        subtitle="20k+ satisfied clients worldwide"
+      />
       <div class="testemonial-swiper">
         <SwiperView />
       </div>
@@ -98,27 +73,35 @@ import HeadingTitle from "@/components/main/HeadingTitle.vue";
 import HeaderImage from "@/components/main/HeaderImage.vue";
 import IntroBlock from "@/components/card/IntroBlock.vue";
 import SolutionBlock from "@/components/card/SolutionBlock.vue";
-import {ourSolution,ourTeams,introduce,socialLinks} from '../jsonStore/store';
-import PopupModal from '@/components/modal/PopupModal'
+import {
+  ourSolution,
+  ourTeams,
+  introduce,
+  socialLinks,
+} from "../jsonStore/store";
+import PopupModal from "@/components/modal/PopupModal";
+import TeamExpartBlock from "@/components/card/TeamExpartBlock.vue";
 // import IntroBlockImage from "@/components/card/IntroBlockImage.vue";
-import image1 from '@/assets/images/about2.jpg';
-import image2 from '@/assets/images/about1.jpg';
+import image1 from "@/assets/images/about2.jpg";
+import image2 from "@/assets/images/about1.jpg";
 
 export default {
   data() {
     return {
-      ourSolution:ourSolution,
-      ourTeams:ourTeams,
-      introduce:introduce,
-      socialLinks:socialLinks,
-      show:false,
-      title:"WHO WE ARE",
-      subtitle:"We run all kinds of software services that vow your success",
-      introText:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi tenetur, amet eveniet a placeat voluptatum natus doloremque cumque cupiditate adipisci officia alias, illo voluptate unde veniam maxime accusantium. Nam.",
-      backgroundImage:'home-header',
-      solution:{},
-      aboutImage2:image2,
-      aboutImage1:image1,
+      textColor: 'red',
+      ourSolution: ourSolution,
+      ourTeams: ourTeams,
+      introduce: introduce,
+      socialLinks: socialLinks,
+      show: false,
+      title: "WHO WE ARE",
+      subtitle: "We run all kinds of software services that vow your success",
+      introText:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi tenetur, amet eveniet a placeat voluptatum natus doloremque cumque cupiditate adipisci officia alias, illo voluptate unde veniam maxime accusantium. Nam.",
+      backgroundImage: "home-header",
+      solution: {},
+      aboutImage2: image2,
+      aboutImage1: image1,
     };
   },
   components: {
@@ -129,23 +112,23 @@ export default {
     IntroBlock,
     SolutionBlock,
     PopupModal,
+    TeamExpartBlock,
     // IntroBlockImage
   },
 
-  mounted(){
-        window.scrollTo(0,0)
-    },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 
-    methods:{
-      solutionView(data) {
+  methods: {
+    solutionView(data) {
       this.solution = data;
       this.show = true;
     },
-      closeView(){
-        this.show = false;
-      }
-    }
-
+    closeView() {
+      this.show = false;
+    },
+  },
 };
 </script>
 
@@ -164,5 +147,9 @@ export default {
   height: 80vh;
   object-fit: cover;
   margin-bottom: 50px;
+}
+
+.text-color {
+  color: red;
 }
 </style>

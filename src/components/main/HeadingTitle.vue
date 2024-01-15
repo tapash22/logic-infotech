@@ -1,7 +1,7 @@
 <template>
   <div>
-    <span class="section-title user-select-none"> {{title}} </span>
-    <p class="section-subtitle user-select-none">
+    <span class="section-title user-select-none" :style="expartStyle"> {{title}} </span>
+    <p class="section-subtitle user-select-none" :style="expartStyle">
      {{subtitle}}
     </p>
   </div>
@@ -9,6 +9,6 @@
 
 <script>
 export default {
-    props:['title', 'subtitle']
+    props:['title', 'subtitle',"expartStyle"]
 }
 </script>
