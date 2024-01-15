@@ -1,7 +1,7 @@
 <template>
   <div class="home -mt-10">
     <HeaderImage title="Blog"  :backgroundImage="backgroundImage"/>
-    <div class="section">
+    <div class="section px-5">
       <BlogCard :blogList="blogList" />
     </div>
   </div>

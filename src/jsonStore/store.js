@@ -206,8 +206,7 @@ export const blogList = [
     id: 1,
     title: "How to become a successful businessman",
     image: require("../assets/blog/1.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -226,8 +225,7 @@ export const blogList = [
     id: 2,
     title: "Who Needs Extract Value From Data?",
     image: require("../assets/blog/2.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -246,8 +244,7 @@ export const blogList = [
     id: 3,
     title: "Easy and Most Powerful Server and Platform.",
     image: require("../assets/blog/3.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -266,8 +263,7 @@ export const blogList = [
     id: 4,
     title: "How to become a successful businessman",
     image: require("../assets/blog/1.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -286,8 +282,7 @@ export const blogList = [
     id: 5,
     title: "Who Needs Extract Value From Data?",
     image: require("../assets/blog/2.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -306,8 +301,7 @@ export const blogList = [
     id: 6,
     title: "Easy and Most Powerful Server and Platform.",
     image: require("../assets/blog/3.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -326,8 +320,7 @@ export const blogList = [
     id: 7,
     title: "Easy and Most Powerful Server and Platform.",
     image: require("../assets/blog/3.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -346,8 +339,7 @@ export const blogList = [
     id: 8,
     title: "How to become a successful businessman",
     image: require("../assets/blog/1.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
@@ -366,8 +358,7 @@ export const blogList = [
     id: 9,
     title: "Who Needs Extract Value From Data?",
     image: require("../assets/blog/2.jpg"),
-    day: 10,
-    month: "Aug",
+    date: "2022-01-15",
     infoList: [
       {
         id: 1,
