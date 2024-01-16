@@ -1,11 +1,11 @@
 <template>
   <div >
-    <carousel :autoplay="true" >
+    <carousel :autoplay="true"  >
       <slide
         v-for="clientT in Clienttestemonial"
         :key="clientT.id"
         :per-page="2"
-        :loop="true"
+        loop="true"
         :space-padding="0"
         class="py-3"
         :paginationPadding="5"

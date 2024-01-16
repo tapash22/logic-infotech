@@ -7,7 +7,7 @@
       @showView="showView"
     />
     <!-- intro part -->
-    <div class="flex px-5 section">
+    <div class="home-intro-wrapper section">
       <IntroBlock
         :title="title"
         :subtitle="subtitle"
@@ -51,7 +51,7 @@
     <!-- testimonial part end -->
 
     <!-- contact block -->
-    <div class="flex section px-5">
+    <div class="section home-intro-wrapper">
       <ContactInformation
         title="To make requests for further information, contact us"
         :information="information"

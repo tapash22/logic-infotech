@@ -3,7 +3,7 @@
     <div class="partners-list">
     
       <div v-for="partner in partners" :key="partner.id" class="partner-item">
-        <img :src="partner.image" class="partner-image" />
+        <img :src="partner.image" class="partner-image scale-100" />
       </div>
     </div>
   </div>
@@ -29,17 +29,21 @@ export default {
 
 .partners-list {
   display: flex;
+  grid-gap: 10px;
   animation: scrollAnimation 20s linear infinite; 
-  animation-delay: -10s; 
 }
 
 .partner-item {
+  width: 100%;
+  height: 100%;
   margin-right: 10px; 
 }
 
 .partner-image {
+
+  /* animation-delay: -1s;  */
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
 }
 
 @keyframes scrollAnimation {

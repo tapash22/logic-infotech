@@ -9,10 +9,10 @@
     <p class="product-details">
       {{ ours.details }}
     </p>
-    <div class="flex justify-start px-2 py-2">
+    <div class="product-button-block">
       <button
         @click="showBox"
-        class="px-4 py-2 rounded-lg text-sm font-bold tracking-wide text-white bg-indigo-950 opacity-80 hover:opacity-100 transition-all delay-150"
+        class="product-button-block-view"
       >
         View
       </button>

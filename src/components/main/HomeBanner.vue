@@ -33,7 +33,6 @@ export default {
 .home-header {
   background-image: url("../../assets//images//1.jpg");
   background-size: cover;
-  height: 100vh;
   object-fit: cover;
   margin-bottom: 50px;
 }

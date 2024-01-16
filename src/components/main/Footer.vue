@@ -1,5 +1,5 @@
 <template>
-  <div class="block w-full footer-cover mt-5 relative">
+  <div class="footer-cover footer-wrapper relative">
     <!-- subscribe box -->
     <div class="footer-subscribe">
       <form class="box footer-subscribe-form">

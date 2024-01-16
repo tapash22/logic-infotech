@@ -5,11 +5,11 @@
     <div class="intro-wrapper section">
       <div class="intro-block">
         <div class="intro-block-left">
-          <div class="">
-            <img :src="aboutImage1" class="intro-block-left-image" />
+          <div class="intro-block-left-first">
+            <img :src="aboutImage1" class="intro-block-left-image image" />
           </div>
-          <div class="">
-            <img :src="aboutImage2" class="intro-block-left-image2" />
+          <div class="intro-block-left-second">
+            <img :src="aboutImage2" class="intro-block-left-image2 image" />
           </div>
         </div>
       </div>
@@ -146,12 +146,16 @@ export default {
 .background-image {
   background-image: url("../assets/images/3.jpg");
   background-size: cover;
-  height: 80vh;
+  height: auto;
   object-fit: cover;
   margin-bottom: 50px;
 }
 
 .text-color {
   color: red;
+}
+.image{
+  background-position: center;
+  background-size: cover;
 }
 </style>

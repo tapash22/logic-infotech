@@ -119,6 +119,11 @@ export const socialLinks = [
     icon: "fa fa-instagram",
     link: "#",
   },
+  {
+    id: 4,
+    icon: "fa fa-youtube-play",
+    link: "#",
+  },
 ];
 
 export const ourServices = [
@@ -639,42 +644,87 @@ export const partners = [
   {
     id: 1,
     name: "partner",
-    image: require("../assets/partner/du.png"),
+    image: require("../assets/partner/baf.png"),
   },
   {
     id: 2,
     name: "partner",
-    image: require("../assets/partner/baf.png"),
+    image: require("../assets/partner/bd.jpg"),
   },
   {
     id: 3,
     name: "partner",
-    image: require("../assets/partner/rab.png"),
+    image: require("../assets/partner/bkmea.jpg"),
   },
   {
     id: 4,
     name: "partner",
-    image: require("../assets/partner/bkmea.jpg"),
+    image: require("../assets/partner/du.png"),
   },
   {
     id: 5,
     name: "partner",
-    image: require("../assets/partner/bkmea.jpg"),
+    image: require("../assets/partner/gh.png"),
   },
   {
     id: 6,
     name: "partner",
-    image: require("../assets/partner/rab.png"),
+    image: require("../assets/partner/proyash.png"),
   },
   {
     id: 7,
     name: "partner",
-    image: require("../assets/partner/bkmea.jpg"),
+    image: require("../assets/partner/rab.png"),
   },
   {
     id: 8,
     name: "partner",
-    image: require("../assets/partner/bkmea.jpg"),
+    image: require("../assets/partner/vivo.png"),
+  },
+  {
+    id: 9,
+    name: "partner",
+    image: require("../assets/partner/aftab1.png"),
+  },
+  {
+    id: 10,
+    name: "partner",
+    image: require("../assets/partner/Mondol.png"),
+  },
+  {
+    id: 11,
+    name: "partner",
+    image: require("../assets/partner/thermaxgroup.jpg"),
+  },
+  {
+    id: 12,
+    name: "partner",
+    image: require("../assets/partner/fourhgroup.png"),
+  },
+  {
+    id: 13,
+    name: "partner",
+    image: require("../assets/partner/micro-fibre-group.png"),
+  },
+  {
+    id: 14,
+    name: "partner",
+    image: require("../assets/partner/urmi.png"),
+  },
+  {
+    id: 15,
+    name: "partner",
+    image: require("../assets/partner/Fakir_Apparels_1.png"),
+  },
+  {
+    id: 16,
+    name: "partner",
+    image: require("../assets/partner/Asrotex-Logo-150x99.png"),
+  },
+  {
+    id: 17,
+    name: "partner",
+    image: require("../assets/partner/fakir.png"),
   },
 ];
 

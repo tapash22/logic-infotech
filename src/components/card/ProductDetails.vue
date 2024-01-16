@@ -1,6 +1,6 @@
 <template>
   <div class="home product-details-wrapper">
-    <div class="block px-5 section">
+    <div class=" section">
       <span class="section-subtitle user-select-none">
         {{ product.name }}
       </span>
