@@ -1,16 +1,20 @@
 <template>
-  <div >
-    <carousel :autoplay="true"  >
-      <slide
-        v-for="clientT in Clienttestemonial"
-        :key="clientT.id"
-        :per-page="2"
-        loop="true"
-        :space-padding="0"
-        class="py-3"
-        :paginationPadding="5"
-
-      >
+  <div>
+    <carousel
+      :autoplay="true"
+      :navigation-enabled="false"
+      :pagination-enabled="true"
+      :easing="'ease'"
+      :pagination-color="'#808080'"
+      :pagination-padding="12"
+      :pagination-active-color="'#84053D'"
+      :perPageCustom="[
+        [370, 1],
+        [480, 2],
+        [768, 2],
+      ]"
+    >
+      <slide v-for="clientT in Clienttestemonial" :key="clientT.id">
         <div class="swiper-wrapper">
           <div class="swiper-block">
             <div class="swiper-block-image">
@@ -43,25 +47,38 @@ export default {
   data() {
     return {
       Clienttestemonial: Clienttestemonial,
-     
+      $mq: {
+        mobile: false,
+      },
     };
-  },
-  computed: {
-    computedPerPage() {
-      if (window.innerWidth < 480) {
-        return 1; // For smaller screens, show 1 item per page
-      } else if (window.innerWidth < 780) {
-        return 1; // For medium screens, show 2 items per page
-      } else {
-        return 2; // For larger screens, adjust as needed
-      }
-    },
-  
   },
 
   components: {
     Carousel,
     Slide,
+  },
+  computed: {
+    perPage() {
+      return this.$mq.mobile ? 1 : 2; // Adjust the breakpoint as needed
+    },
+  },
+  mounted() {
+    // Add an event listener for window resize
+    window.addEventListener("resize", this.handleResize);
+    // Initial calculation
+    this.handleResize();
+  },
+  beforeDestroy() {
+    // Remove the event listener to prevent memory leaks
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      // Update the window width in the $mq property
+      this.$mq = {
+        mobile: window.innerWidth < 768, // Adjust the breakpoint as needed
+      };
+    },
   },
 };
 </script>

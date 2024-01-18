@@ -62,6 +62,7 @@
         <PartnerSwiper />
       </div>
     </div>
+
     <!-- testimonial part end -->
   </div>
 </template>
