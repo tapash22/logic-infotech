@@ -1,72 +1,47 @@
 <template>
   <div class="navbar">
-    <div
-      :class="isFixed ? 'fixed-nav yellow-background' : 'navigation '"
-      class="navigation-wrapper"
-    >
+    <div :class="isFixed ? 'fixed-nav yellow-background' : 'navigation '" class="navigation-wrapper">
       <div class="navigation-image-block">
         <router-link to="/">
-          <img
-            src="../../assets/logo/logic-info.png"
-            class="navigation-image-block-view"
-        /></router-link>
+          <img src="../../assets/logo/logic-info.png" class="navigation-image-block-view" /></router-link>
 
-        <button
-        @click="toggleMenu"
-        class="sm:hidden block absolute top-0 right-0 mt-4 mr-6 focus:outline-none"
-      >
-        <svg
-          class="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
-      </button>
+        <button @click="toggleMenu" class="sm:hidden block absolute top-0 right-0 mt-4 mr-6 focus:outline-none">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
       </div>
-      <ul v-if="!isMobile"  class="navigation-block-list hidden sm:flex">
+      <ul v-if="!isMobile" class="navigation-block-list hidden sm:flex">
         <li v-for="navL in navLinks" :key="navL.id">
-          <router-link
-            :to="navL.link"
-            class="navigation-block-list-link text-white"
-            :class="{
-              'navigation-block-list-link-active': isNavLinkActive(navL.link),
-            }"
-          >
+          <router-link :to="navL.link" class="navigation-block-list-link text-white" :class="{
+            'navigation-block-list-link-active': isNavLinkActive(navL.link),
+          }">
             {{ navL.name }}
           </router-link>
         </li>
       </ul>
 
       <transition name="slide-fade">
-        <div v-if="isMobile && isMenuOpen" class="mobile-menu-card">
+        <div v-if="isMobile && isMenuOpen" class="mobile-menu-card" @click="handleMobileMenuClick">
           <ul class="mobile-menu-list">
             <li v-for="navL in navLinks" :key="navL.id">
-              <router-link
-                :to="navL.link"
-                class="mobile-menu-list-link text-white"
-                :class="{
-                  'mobile-menu-list-link-active': isNavLinkActive(navL.link),
-                }"
-              >
+              <router-link :to="navL.link" class="mobile-menu-list-link text-white" :class="{
+                'mobile-menu-list-link-active': isNavLinkActive(navL.link),
+              }" >
                 {{ navL.name }}
               </router-link>
             </li>
           </ul>
         </div>
       </transition>
+
+
     </div>
   </div>
 </template>
   
-  <script>
+<script>
 import { navLinks } from "../../jsonStore/store";
 
 export default {
@@ -102,14 +77,22 @@ export default {
       }
     },
 
-    toggleMenu(){
-      this.isMenuOpen = !this.isMenuOpen;
+    toggleMenu() {
+      if (this.isMobile) {
+        this.isMenuOpen = !this.isMenuOpen;
+      }
     },
     closeMenu() {
       this.isMenuOpen = false;
     },
     checkMobile() {
-      this.isMobile = window.innerWidth <= 640; 
+      this.isMobile = window.innerWidth <= 640;
+    },
+    handleMobileMenuClick(event) {
+      // Check if the clicked element is a link, and close the menu if true
+      if (event.target.tagName.toLowerCase() === 'a') {
+        this.isMenuOpen = false;
+      }
     },
   },
   mounted() {
@@ -124,7 +107,7 @@ export default {
 };
 </script>
   
-  <style scoped>
+<style scoped>
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -141,13 +124,15 @@ export default {
 .nav-placeholder {
   height: 20px;
 }
+
 .navbar {
   background: rgb(18, 18, 143);
 }
 
 .mobile-menu-card {
   position: absolute;
-  top: 70px; /* Adjust based on your header height */
+  top: 70px;
+  /* Adjust based on your header height */
   right: 0;
   width: 100%;
   background-color: rgb(18, 18, 143);
