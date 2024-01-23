@@ -8,8 +8,8 @@
     </div>
 
     <!-- contact information -->
-    <div class="section px-12">
-      <div class="service-cover">
+    <div class="section service-view">
+      <div class="service-cover ">
         <ServiceContact :tag="tag" :title="title" :contact="contact" />
       </div>
     </div>

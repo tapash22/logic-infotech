@@ -345,7 +345,7 @@ textarea:focus {
   }
 
   .testemonial-swiper {
-    @apply py-3 px-14 bg-gray-300;
+    @apply py-3 px-1 sm:px-1 md:px-5 lg:px-14 xl:px-14 bg-gray-300;
   }
   .testemonial-partner-swiper {
     @apply px-8 py-3;
@@ -354,7 +354,7 @@ textarea:focus {
 
   /* swiperView */
   .swiper-view {
-    @apply px-12 py-3;
+    @apply  py-3 px-1 sm:px-1 md:px-5 lg:px-14 xl:px-14;
   }
   .swiper-wrapper {
     @apply flex justify-center py-3 px-5 bg-transparent;
@@ -554,6 +554,9 @@ textarea:focus {
     @apply flex justify-start px-5 rounded-lg;
   }
 
+  .service-view{
+    @apply px-5 sm:px-5 md:px-8 lg:px-12 xl:px-12
+  }
   .service-contact-wrapper-block {
     @apply block sm:block md:block lg:flex xl:flex justify-between items-center px-5 py-5 sm:py-5 md:py-5 lg:py-10 xl:py-10;
   }
